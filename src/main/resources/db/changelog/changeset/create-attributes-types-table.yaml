@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-attributes-types-table
+      author: yauheni_vozny
+      changes:
+        - createTable:
+            tableName: attributetypes
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: basictype
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: validation
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: isIdentifier
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: userId
+                  type: integer
+                  constraints:
+                    foreignKeyName: people_attribute_types_fk
+                    referencedTableName: peopleattributes
+                    referencedColumnNames: id

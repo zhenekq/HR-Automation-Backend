@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: delete-type-column
+      author: yauheni_vozny
+      changes:
+        - dropColumn:
+            catalogName: hr-automation
+            columnName: type
+            columns:
+              - column:
+                  name: type
+            schemaName: public
+            tableName: peopleattributes

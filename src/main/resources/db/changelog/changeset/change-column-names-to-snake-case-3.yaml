@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: change-column-names-to-snake-case-3
+      author: yauheni_vozny
+      changes:
+        - renameColumn:
+            catalogName: hr-automation
+            columnDataType: varchar
+            newColumnName: isidentifier
+            oldColumnName: isIdentifier
+            schemaName: public
+            tableName: attributetypes

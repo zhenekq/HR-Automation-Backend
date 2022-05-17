@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-to-people-attributes-delete-from-attrubute-types-archived
+      author: yauheni_vozny
+      changes:
+        - addColumn:
+            tableName: peopleattributes
+            columns:
+              - column:
+                  name: isarchived
+                  type: boolean
+                  defaultValue: 'false'
+        - dropColumn:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: isarchived
+            schemaName: public
+            tableName: attributetypes

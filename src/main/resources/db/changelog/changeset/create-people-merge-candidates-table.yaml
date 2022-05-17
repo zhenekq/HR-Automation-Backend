@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-people-merge-candidates-table
+      author: yauheni_vozny
+      changes:
+        - createTable:
+            tableName: people_merge_candidates
+            columns:
+              - column:
+                  name: user1id
+                  type: varchar(200)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: people_merge_candidates_user1_fk
+                    referencedTableName: people
+                    referencedColumnNames: id
+              - column:
+                  name: user2id
+                  type: varchar(200)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: people_merge_candidates_user2_fk
+                    referencedTableName: people
+                    referencedColumnNames: id
+              - column:
+                  name: status
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: reason
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: reasoncomment
+                  type: varchar(200)
+                  constraints:
+                    nullable: false

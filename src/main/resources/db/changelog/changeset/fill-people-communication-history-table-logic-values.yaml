@@ -1,0 +1,99 @@
+databaseChangeLog:
+  - changeSet:
+      id: fill-people-communication-history-table-logic-values
+      author: yauheni_vozny
+      changes:
+        - insert:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: createdate
+                  value: 2022-02-11 13:44:33 UTC
+              - column:
+                  name: updatedate
+                  value: 2022-02-14 15:44:33 UTC
+              - column:
+                  name: user_id
+                  value: yauheni_vozny
+              - column:
+                  name: comment
+                  value: Very good english skills, and good knowledges of english
+            dbms: 'all'
+            schemaName: public
+            tableName: communication_history
+
+        - insert:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: createdate
+                  value: 2021-01-16 03:44:33 UTC
+              - column:
+                  name: updatedate
+                  value: 2022-01-12 11:43:12 UTC
+              - column:
+                  name: user_id
+                  value: vladimir_zelmanchuk
+              - column:
+                  name: comment
+                  value: Good soft skills, but bad english(A2)
+            dbms: 'all'
+            schemaName: public
+            tableName: communication_history
+
+        - insert:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: createdate
+                  value: 2021-11-22 01:23:03 UTC
+              - column:
+                  name: updatedate
+                  value: 2022-01-09 17:22:04 UTC
+              - column:
+                  name: user_id
+                  value: uliana_fomina
+              - column:
+                  name: comment
+                  value: Successfully passed cources by EPAM SYSTEMS(ReactJS)
+            dbms: 'all'
+            schemaName: public
+            tableName: communication_history
+
+        - insert:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: createdate
+                  value: 2021-04-12 18:01:03 UTC
+              - column:
+                  name: updatedate
+                  value: 2022-01-22 09:12:45 UTC
+              - column:
+                  name: user_id
+                  value: artem_skrebets
+              - column:
+                  name: comment
+                  value: Do not passed hard part of technical interview
+            dbms: 'all'
+            schemaName: public
+            tableName: communication_history
+
+        - insert:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: createdate
+                  value: 2021-09-19 12:53:12 UTC
+              - column:
+                  name: updatedate
+                  value: 2021-12-29 17:55:21 UTC
+              - column:
+                  name: user_id
+                  value: stas_gutsko
+              - column:
+                  name: comment
+                  value: Sent job offer to Mifort
+            dbms: 'all'
+            schemaName: public
+            tableName: communication_history

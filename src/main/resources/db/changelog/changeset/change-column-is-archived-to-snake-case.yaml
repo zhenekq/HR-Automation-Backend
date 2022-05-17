@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: change-column-is-archived-to-snake-case
+      author: yauheni_vozny
+      changes:
+        - renameColumn:
+            catalogName: hr-automation
+            columnDataType: boolean
+            newColumnName: isarchived
+            oldColumnName: isArchived
+            schemaName: public
+            tableName: communication_history
+        - renameColumn:
+            catalogName: hr-automation
+            columnDataType: boolean
+            newColumnName: isarchived
+            oldColumnName: isArchived
+            schemaName: public
+            tableName: attributetypes

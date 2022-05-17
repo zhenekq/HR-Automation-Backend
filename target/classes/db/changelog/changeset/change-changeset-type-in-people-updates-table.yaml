@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: change-changeset-type-in-people-updates-table
+      author: yauheni_vozny
+      changes:
+        - modifyDataType:
+            catalogName: hr-automation
+            columnName: changeset
+            newDataType: json
+            schemaName: public
+            tableName: peopleupdates

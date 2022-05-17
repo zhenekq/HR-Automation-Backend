@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: change-timestamp-types-in-tables
+      author: yauheni_vozny
+      changes:
+        - modifyDataType:
+            catalogName: hr-automation
+            columnName: createdate
+            newDataType: timestamptz(6)
+            schemaName: public
+            tableName: communication_history
+        - modifyDataType:
+            catalogName: hr-automation
+            columnName: updatedate
+            newDataType: timestamptz(6)
+            schemaName: public
+            tableName: communication_history
+        - modifyDataType:
+            catalogName: hr-automation
+            columnName: lastcontact
+            newDataType: timestamptz(6)
+            schemaName: public
+            tableName: people
+        - modifyDataType:
+            catalogName: hr-automation
+            columnName: updatedate
+            newDataType: timestamptz(6)
+            schemaName: public
+            tableName: peopleupdates
+

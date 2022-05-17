@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-keywords-table
+      author: yauheni_vozny
+      changes:
+        - createTable:
+            tableName: keywords
+            columns:
+              - column:
+                  name: id
+                  type: varchar(200)
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: userId
+                  type: varchar(200)
+                  constraints:
+                    foreignKeyName: people_keywords_fk
+                    referencedTableName: people
+                    referencedColumnNames: id
+                    nullable: false

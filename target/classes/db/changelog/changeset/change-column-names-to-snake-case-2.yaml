@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: change-column-names-to-snake-case
+      author: yauheni_vozny
+      changes:
+        - renameColumn:
+            catalogName: hr-automation
+            columnDataType: varchar
+            newColumnName: user_id
+            oldColumnName: userId
+            schemaName: public
+            tableName: communication_history
+        - renameColumn:
+            catalogName: hr-automation
+            columnDataType: varchar
+            newColumnName: user_id
+            oldColumnName: userId
+            schemaName: public
+            tableName: peopleattributes
+        - renameColumn:
+            catalogName: hr-automation
+            columnDataType: varchar
+            newColumnName: user_id
+            oldColumnName: userId
+            schemaName: public
+            tableName: peopleupdates

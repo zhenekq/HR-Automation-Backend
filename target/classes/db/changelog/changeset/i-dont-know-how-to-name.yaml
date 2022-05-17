@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: ud
+      author: yauheni_vozny
+      changes:
+        - update:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: isidentifier
+                  value: 'true'
+            schemaName: public
+            tableName: attributetypes
+            where: id=2
+        - update:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: isidentifier
+                  value: 'true'
+            schemaName: public
+            tableName: attributetypes
+            where: id=4
+        - update:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: isidentifier
+                  value: 'false'
+            schemaName: public
+            tableName: attributetypes
+            where: id=5

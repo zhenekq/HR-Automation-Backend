@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: fill-merge-fake-candidates
+      author: yauheni_vozny
+      changes:
+        - insert:
+            catalogName: hr-automation
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: user1_id
+                  value: yauheni_vozny
+              - column:
+                  name: user2_id
+                  value: vladimir_zelmanchuk
+              - column:
+                  name: status
+                  value: check status
+              - column:
+                  name: reason
+                  value: common history and attributes
+              - column:
+                  name: reasoncomment
+                  value: i dont know
+            dbms: 'all'
+            schemaName: public
+            tableName: people_merge_candidates

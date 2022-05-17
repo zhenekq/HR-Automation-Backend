@@ -1,0 +1,95 @@
+databaseChangeLog:
+  - changeSet:
+      id: change-column-names-att-types
+      author: yauheni_vozny
+      changes:
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: name
+                          value: phone
+                schemaName: public
+                tableName: attributetypes
+                where: id=1
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: basictype
+                          value: string
+                schemaName: public
+                tableName: attributetypes
+                where: id=1
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: name
+                          value: twitter
+                schemaName: public
+                tableName: attributetypes
+                where: id=2
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                        name: basictype
+                        value: string
+                schemaName: public
+                tableName: attributetypes
+                where: id=2
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: name
+                          value: linkedin
+                schemaName: public
+                tableName: attributetypes
+                where: id=3
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: basictype
+                          value: string
+                schemaName: public
+                tableName: attributetypes
+                where: id=3
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: name
+                          value: githubid
+                schemaName: public
+                tableName: attributetypes
+                where: id=4
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: basictype
+                          value: string
+                schemaName: public
+                tableName: attributetypes
+                where: id=4
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: name
+                          value: company
+                schemaName: public
+                tableName: attributetypes
+                where: id=5
+          - update:
+                catalogName: hr-automation
+                columns:
+                    - column:
+                          name: basictype
+                          value: string
+                schemaName: public
+                tableName: attributetypes
+                where: id=5
