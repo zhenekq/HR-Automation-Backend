@@ -36,7 +36,7 @@ env:
   ECR_REPOSITORY: hr-automation          # set this to your Amazon ECR repository name
   ECS_SERVICE: hr-automation-service                 # set this to your Amazon ECS service name
   ECS_CLUSTER:  hr-automation                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: update-hr:1 # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: f0d4ca71a0f44b8c84318e98b0f85eee # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: hr-automation-updated-real           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
