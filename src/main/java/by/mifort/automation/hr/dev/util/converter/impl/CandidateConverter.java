@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CandidateConverter implements EntityConverter<Candidate, CandidateDto> {
@@ -38,7 +39,7 @@ public class CandidateConverter implements EntityConverter<Candidate, CandidateD
     public List<CandidateDto> convertToListEntityDto(List<Candidate> candidates) {
         return candidates.stream()
                 .map(this::convertToEntityDto)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -54,6 +55,6 @@ public class CandidateConverter implements EntityConverter<Candidate, CandidateD
     public List<Candidate> convertToListEntity(List<CandidateDto> candidateDtos) {
         return candidateDtos.stream()
                 .map(this::convertToEntity)
-                .toList();
+                .collect(Collectors.toList());
     }
 }

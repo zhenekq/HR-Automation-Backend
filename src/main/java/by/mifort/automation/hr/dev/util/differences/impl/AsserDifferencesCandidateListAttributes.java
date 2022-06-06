@@ -10,8 +10,9 @@ import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 
 import java.sql.Timestamp;
 import java.util.*;
+import java.util.stream.Collectors;
 
-public class AsserDifferencesCandidateListAttributes {
+public class    AsserDifferencesCandidateListAttributes {
 
     private final EntityConverter<CandidateAttributes, CandidateAttributesDto> converter;
 
@@ -45,7 +46,7 @@ public class AsserDifferencesCandidateListAttributes {
                 resultDto.add(dbDto);
             }
         }
-        return resultDto.stream().toList();
+        return new ArrayList<>(resultDto);
     }
 
     public static CandidateUpdate getUpdates(List<CandidateAttributes> oldAttr, List<CandidateAttributes> newAttr){

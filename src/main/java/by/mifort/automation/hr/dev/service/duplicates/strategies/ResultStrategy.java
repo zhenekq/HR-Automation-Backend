@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Component
 public class ResultStrategy implements DuplicatesStrategy {
@@ -32,7 +33,7 @@ public class ResultStrategy implements DuplicatesStrategy {
         result.addAll(dobFirstnameLastnameCityStrategy.getDuplicates());
         result.addAll(keyAttributeStrategy.getDuplicates());
         result.addAll(passportFirstnameLastnameDateCityStrategy.getDuplicates());
-        return result.stream().toList();
+        return new ArrayList<>(result);
     }
 
     @Override

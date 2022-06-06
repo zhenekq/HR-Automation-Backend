@@ -2,7 +2,6 @@ by\mifort\automation\hr\dev\service\CommunicationHistoryService.class
 by\mifort\automation\hr\dev\util\converter\impl\CandidateConverter.class
 by\mifort\automation\hr\dev\util\differences\AssertDifferencesUpdates.class
 by\mifort\automation\hr\dev\util\validator\impl\CandidateUpdateValidator.class
-by\mifort\automation\hr\dev\config\Main2.class
 by\mifort\automation\hr\dev\dto\CommunicationHistoryDto.class
 by\mifort\automation\hr\dev\util\converter\EntityConverter.class
 by\mifort\automation\hr\dev\util\validator\impl\CommunicationHistoryValidator.class
@@ -36,7 +35,6 @@ by\mifort\automation\hr\dev\dto\FilterDto.class
 by\mifort\automation\hr\dev\util\validator\impl\CandidateAttributeValidator.class
 by\mifort\automation\hr\dev\util\differences\impl\AsserDifferencesCandidateListAttributes.class
 by\mifort\automation\hr\dev\service\duplicates\DuplicatesStrategyName.class
-by\mifort\automation\hr\dev\config\Main2$1.class
 by\mifort\automation\hr\dev\config\SwaggerConfiguration.class
 by\mifort\automation\hr\dev\entity\Keyword.class
 by\mifort\automation\hr\dev\util\converter\impl\AttributeTypesConverter.class

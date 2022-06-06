@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import javax.management.BadAttributeValueExpException;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AttributeTypesServiceImpl implements AttributeTypesService {
@@ -36,7 +37,7 @@ public class AttributeTypesServiceImpl implements AttributeTypesService {
         Integer page = filterDto.getPageNumber();
         Integer amount = filterDto.getPageSize();
         Pageable pageable = PageRequest.of(page - 1, amount);
-        types = repository.findAll(pageable).stream().toList();
+        types = repository.findAll(pageable).stream().collect(Collectors.toList());
         return types;
     }
 

@@ -22,6 +22,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -123,7 +124,7 @@ public class CandidateControllerTest {
         List<String> actualKeywords =  controller.addKeywords(expectedCandidate.getId(), filterDto)
                 .stream()
                 .map(object -> Objects.toString(object.getId(), null))
-                .toList();
+                .collect(Collectors.toList());
         assertEquals(expectedKeywords,actualKeywords);
     }
 
@@ -140,7 +141,7 @@ public class CandidateControllerTest {
         List<String> actualKeywords = controller.addKeywords(expectedCandidate.getId(), filterDto)
                 .stream()
                 .map(object -> Objects.toString(object.getId(), null))
-                .toList();
+                .collect(Collectors.toList());
         List<String> expectedKeywords = List.of("python");
         assertEquals(actualKeywords, expectedKeywords);
     }

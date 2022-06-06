@@ -35,6 +35,6 @@ public class DuplicateController {
         return duplicates
                 .stream()
                 .map(converter::convertToListEntityDto)
-                .toList();
+                .collect(Collectors.toList());
     }
 }

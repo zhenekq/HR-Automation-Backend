@@ -6,6 +6,7 @@ import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CommunicationHistoryConverter implements EntityConverter<CommunicationHistory, CommunicationHistoryDto> {
@@ -25,7 +26,7 @@ public class CommunicationHistoryConverter implements EntityConverter<Communicat
     public List<CommunicationHistoryDto> convertToListEntityDto(List<CommunicationHistory> communicationHistories) {
         return communicationHistories.stream()
                 .map(this::convertToEntityDto)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -44,6 +45,6 @@ public class CommunicationHistoryConverter implements EntityConverter<Communicat
     public List<CommunicationHistory> convertToListEntity(List<CommunicationHistoryDto> communicationHistoryDtos) {
         return communicationHistoryDtos.stream()
                 .map(this::convertToEntity)
-                .toList();
+                .collect(Collectors.toList());
     }
 }

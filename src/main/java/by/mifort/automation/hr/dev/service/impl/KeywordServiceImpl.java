@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class KeywordServiceImpl implements KeywordService {
@@ -26,7 +27,7 @@ public class KeywordServiceImpl implements KeywordService {
         List<Keyword> requestKeywords = dto.getKeyword()
                 .stream()
                 .map(Keyword::new)
-                .toList();
+                .collect(Collectors.toList());
         List<Keyword> distinctKeywords = new ArrayList<>();
         for (Keyword keyword : requestKeywords) {
             Keyword dbKeyword = repository.findById(keyword.getId()).orElse(null);

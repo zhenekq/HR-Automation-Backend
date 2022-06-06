@@ -6,6 +6,7 @@ import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CandidateMergeConverter implements EntityConverter<CandidateMerge, CandidateMergeDto> {
@@ -28,7 +29,7 @@ public class CandidateMergeConverter implements EntityConverter<CandidateMerge, 
         return candidateMerges
                 .stream()
                 .map(this::convertToEntityDto)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override

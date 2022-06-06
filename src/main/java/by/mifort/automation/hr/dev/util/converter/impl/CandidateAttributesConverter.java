@@ -9,6 +9,7 @@ import liquibase.pro.packaged.A;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CandidateAttributesConverter implements EntityConverter<CandidateAttributes, CandidateAttributesDto> {
@@ -42,7 +43,7 @@ public class CandidateAttributesConverter implements EntityConverter<CandidateAt
     public List<CandidateAttributesDto> convertToListEntityDto(List<CandidateAttributes> attributes) {
         return attributes.stream()
                 .map(this::convertToEntityDto)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -56,7 +57,7 @@ public class CandidateAttributesConverter implements EntityConverter<CandidateAt
         return candidateAttributesDtos
                 .stream()
                 .map(this::convertToEntity)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     private String firstUpperCase(String word){

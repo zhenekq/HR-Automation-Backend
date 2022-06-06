@@ -6,6 +6,7 @@ import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class AttributeTypesConverter implements EntityConverter<AttributeTypes, AttributeTypesDto> {
@@ -45,7 +46,7 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
     public List<AttributeTypesDto> convertToListEntityDto(List<AttributeTypes> attributeTypes) {
         return attributeTypes.stream()
                 .map(this::convertToEntityDto)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -63,7 +64,7 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
     public List<AttributeTypes> convertToListEntity(List<AttributeTypesDto> attributeTypesDtos) {
         return attributeTypesDtos.stream()
                 .map(this::convertToEntity)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     private String firstUpperCase(String word){
