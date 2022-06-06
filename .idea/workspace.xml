@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="dont care">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/config/Main2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/AttributeTypesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/AttributeTypesDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/repository/CandidateAttributesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/repository/CandidateAttributesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/strategies/ResultStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/strategies/ResultStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/AttributeTypesConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/AttributeTypesConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/CandidateAttributesConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/CandidateAttributesConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/dto/AttributeTypesDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/dto/AttributeTypesDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/repository/CandidateAttributesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/repository/CandidateAttributesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/strategies/ResultStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/strategies/ResultStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/AttributeTypesConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/AttributeTypesConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/CandidateAttributesConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/CandidateAttributesConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
-    </list>
+    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -255,7 +230,7 @@
       <workItem from="1654208758706" duration="1495000" />
       <workItem from="1654500598525" duration="2375000" />
       <workItem from="1654506980607" duration="3414000" />
-      <workItem from="1654516585384" duration="2025000" />
+      <workItem from="1654516585384" duration="2907000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -397,7 +372,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652434613574</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="dont care">
+      <created>1654519369446</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1654519369446</updated>
+    </task>
+    <task id="LOCAL-00022" summary="dont care">
+      <created>1654519626957</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1654519626957</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
