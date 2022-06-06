@@ -10,6 +10,6 @@ public class TestController {
 
     @GetMapping
     public String vo(){
-        return "CI is WORKING!";
+        return "CI is WORKING123!";
     }
 }
