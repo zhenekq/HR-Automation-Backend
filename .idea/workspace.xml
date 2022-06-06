@@ -5,7 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="dont care">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/config/Main2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/AttributeTypesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/AttributeTypesDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/repository/CandidateAttributesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/repository/CandidateAttributesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/strategies/ResultStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/strategies/ResultStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/AttributeTypesConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/AttributeTypesConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/CandidateAttributesConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/CandidateAttributesConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/dto/AttributeTypesDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/dto/AttributeTypesDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/repository/CandidateAttributesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/repository/CandidateAttributesRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/strategies/ResultStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/strategies/ResultStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/AttributeTypesConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/AttributeTypesConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/CandidateAttributesConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/CandidateAttributesConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +64,9 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
         <entry key="com.haulmont.jpb.jpaInspector" value="true" />
         <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
@@ -48,6 +74,9 @@
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
@@ -56,14 +85,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
@@ -74,7 +95,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql&#10;h2" />
+    <property name="DatabaseDriversLRU" value="h2&#10;postgresql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -100,22 +121,23 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Mifort\HR-Automation-Backend" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="by.mifort.automation.hr.dev.controller" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.DevApplication (1)">
-    <configuration name="AttributeTypesControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.mifort.automation.hr.dev.config.Main2" />
       <module name="HR-Automation-Backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="by.mifort.automation.hr.dev.controller.*" />
+          <option name="PATTERN" value="by.mifort.automation.hr.dev.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="by.mifort.automation.hr.dev.controller" />
-      <option name="MAIN_CLASS_NAME" value="by.mifort.automation.hr.dev.controller.AttributeTypesControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -189,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main2" />
         <item itemvalue="JUnit.CandidateAttributeControllerTest" />
         <item itemvalue="JUnit.DuplicateControllerTest" />
         <item itemvalue="JUnit.CandidateHistoryControllerTest" />
         <item itemvalue="JUnit.CandidateControllerTest" />
-        <item itemvalue="JUnit.AttributeTypesControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -228,6 +250,12 @@
       <workItem from="1651496370780" duration="2646000" />
       <workItem from="1651560816770" duration="37228000" />
       <workItem from="1652337866811" duration="48039000" />
+      <workItem from="1654006674026" duration="2927000" />
+      <workItem from="1654157155771" duration="6774000" />
+      <workItem from="1654208758706" duration="1495000" />
+      <workItem from="1654500598525" duration="2375000" />
+      <workItem from="1654506980607" duration="3414000" />
+      <workItem from="1654516585384" duration="2025000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -385,6 +413,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test commit" />
@@ -424,10 +453,10 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HR_Automation$CandidateHistoryControllerTest.ic" NAME="CandidateHistoryControllerTest Coverage Results" MODIFIED="1646130841278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/HR_Automation$CandidateControllerTest.ic" NAME="CandidateControllerTest Coverage Results" MODIFIED="1646130788111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>by.mifort.automation.hr.dev.controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/HR_Automation$CandidateControllerTest.ic" NAME="CandidateControllerTest Coverage Results" MODIFIED="1646130788111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/HR_Automation$CandidateHistoryControllerTest.ic" NAME="CandidateHistoryControllerTest Coverage Results" MODIFIED="1646130841278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>by.mifort.automation.hr.dev.controller.*</FILTER>
     </SUITE>
   </component>

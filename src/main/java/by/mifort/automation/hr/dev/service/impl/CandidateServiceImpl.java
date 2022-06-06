@@ -64,6 +64,7 @@ public class CandidateServiceImpl implements CandidateService {
                     .findById(candidate.getId())
                     .isPresent();
             if(!isCandidateExists){
+                candidate.setLastContact(new Timestamp(new Date().getTime()));
                 candidateRepository.save(candidate);
                 candidateAttributesRepository.saveAll(emptyList(candidate));
                 return candidate;

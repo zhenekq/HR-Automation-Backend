@@ -2,6 +2,7 @@ package by.mifort.automation.hr.dev.repository;
 
 import by.mifort.automation.hr.dev.entity.CandidateAttributes;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -18,7 +19,7 @@ import java.util.Optional;
  */
 
 @Repository
-public interface CandidateAttributesRepository extends JpaRepository<CandidateAttributes, Integer> {
+public interface CandidateAttributesRepository extends JpaRepository<CandidateAttributes, Integer>, JpaSpecificationExecutor<CandidateAttributes> {
     /**
      * @param type identifier for searching
      * @return List of probably identical candidate's attributes
@@ -40,5 +41,6 @@ public interface CandidateAttributesRepository extends JpaRepository<CandidateAt
      * @return List of candidate attributes by candidate's identifier
      */
     List<CandidateAttributes> findAllByCandidateId(String id);
+
 
 }

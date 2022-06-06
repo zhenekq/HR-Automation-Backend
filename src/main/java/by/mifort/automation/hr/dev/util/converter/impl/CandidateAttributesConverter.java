@@ -13,13 +13,27 @@ import java.util.List;
 @Component
 public class CandidateAttributesConverter implements EntityConverter<CandidateAttributes, CandidateAttributesDto> {
 
+    private static final String DOB_LABEL = "Date of birth";
+    private static final String DOB_FACEBOOK_ID = "Facebook";
+    private static final String DOB_GITHUB_ID = "Github";
+    private static final String DOB_PASSPORT= "Passport number";
+
     @Override
     public CandidateAttributesDto convertToEntityDto(CandidateAttributes attributes) {
         CandidateAttributesDto dto = new CandidateAttributesDto();
         dto.setId(attributes.getId());
         dto.setValue(attributes.getValue());
         dto.setValueSource(attributes.getValueSource());
-        dto.setName(attributes.getAttributeTypes().getName());
+        dto.setName(firstUpperCase(attributes.getAttributeTypes().getName()));
+        if(attributes.getAttributeTypes().getName() != null) {
+            switch (attributes.getAttributeTypes().getName()) {
+                case "date_of_birth" -> dto.setName(DOB_LABEL);
+                case "facebookid" -> dto.setName(DOB_FACEBOOK_ID);
+                case "githubid" -> dto.setName(DOB_GITHUB_ID);
+                case "passport_number" -> dto.setName(DOB_PASSPORT);
+                default -> dto.setName(firstUpperCase(attributes.getAttributeTypes().getName()));
+            }
+        }
         dto.setArchived(attributes.getIsArchived());
         return dto;
     }
@@ -43,5 +57,10 @@ public class CandidateAttributesConverter implements EntityConverter<CandidateAt
                 .stream()
                 .map(this::convertToEntity)
                 .toList();
+    }
+
+    private String firstUpperCase(String word){
+        if(word == null || word.isEmpty()) return word;
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
     }
 }

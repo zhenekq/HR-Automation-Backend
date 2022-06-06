@@ -17,6 +17,7 @@ public class AttributeTypesDto {
     private String name;
     private String basicType;
     private String validation;
+    private String label;
     private Boolean isIdentifier;
 
     public AttributeTypesDto() {
@@ -78,6 +79,14 @@ public class AttributeTypesDto {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     @Override

@@ -1,7 +1,7 @@
-/Users/remarket/Projects/HR-Automation-Group/HR-Automation-Backend/src/test/java/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.java
-/Users/remarket/Projects/HR-Automation-Group/HR-Automation-Backend/src/test/java/by/mifort/automation/hr/dev/DevApplicationTests.java
-/Users/remarket/Projects/HR-Automation-Group/HR-Automation-Backend/src/test/java/by/mifort/automation/hr/dev/controller/CandidateControllerTest.java
-/Users/remarket/Projects/HR-Automation-Group/HR-Automation-Backend/src/test/java/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.java
-/Users/remarket/Projects/HR-Automation-Group/HR-Automation-Backend/src/test/java/by/mifort/automation/hr/dev/controller/CandidateAttributeControllerTest.java
-/Users/remarket/Projects/HR-Automation-Group/HR-Automation-Backend/src/test/java/by/mifort/automation/hr/dev/db/H2Database.java
-/Users/remarket/Projects/HR-Automation-Group/HR-Automation-Backend/src/test/java/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.java
+D:\Mifort\HR-Automation-Backend\src\test\java\by\mifort\automation\hr\dev\controller\AttributeTypesControllerTest.java
+D:\Mifort\HR-Automation-Backend\src\test\java\by\mifort\automation\hr\dev\controller\CandidateHistoryControllerTest.java
+D:\Mifort\HR-Automation-Backend\src\test\java\by\mifort\automation\hr\dev\controller\DuplicateControllerTest.java
+D:\Mifort\HR-Automation-Backend\src\test\java\by\mifort\automation\hr\dev\controller\CandidateControllerTest.java
+D:\Mifort\HR-Automation-Backend\src\test\java\by\mifort\automation\hr\dev\DevApplicationTests.java
+D:\Mifort\HR-Automation-Backend\src\test\java\by\mifort\automation\hr\dev\db\H2Database.java
+D:\Mifort\HR-Automation-Backend\src\test\java\by\mifort\automation\hr\dev\controller\CandidateAttributeControllerTest.java

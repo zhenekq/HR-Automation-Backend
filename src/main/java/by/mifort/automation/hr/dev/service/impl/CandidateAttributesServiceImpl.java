@@ -66,9 +66,11 @@ public class CandidateAttributesServiceImpl implements CandidateAttributesServic
         if(validator.isValidParams(attributes)){
             List<CandidateAttributes> attr = AsserDifferencesCandidateListAttributes.assertDiff(
                     candidateAttributes, attributes);
+            repository.saveAll(attr);
             if(update.getChangeSet().size() != 0 && !update.getChangeSet().isEmpty() && update.getChangeSet() != null){
                 candidateUpdateRepository.save(update);
             }
+            attr.forEach(p -> p.setAttributeTypes(typesRepository.getById(p.getAttributeTypes().getId())));
             return attr;
         }
         throw new IllegalArgumentException("Entity params couldn't be nullable!");

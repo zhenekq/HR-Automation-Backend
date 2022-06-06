@@ -9,6 +9,12 @@ import java.util.List;
 
 @Component
 public class AttributeTypesConverter implements EntityConverter<AttributeTypes, AttributeTypesDto> {
+
+    private static final String DOB_LABEL = "Date of birth";
+    private static final String DOB_FACEBOOK_ID = "Facebook";
+    private static final String DOB_GITHUB_ID = "Github";
+    private static final String DOB_PASSPORT= "Passport number";
+
     @Override
     public AttributeTypesDto convertToEntityDto(AttributeTypes attributeTypes) {
         AttributeTypesDto dto = new AttributeTypesDto();
@@ -16,6 +22,21 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
         dto.setBasicType(attributeTypes.getBasicType());
         dto.setIdentifier(attributeTypes.getIdentifier());
         dto.setName(attributeTypes.getName());
+        dto.setLabel(firstUpperCase(attributeTypes.getName()));
+        switch (attributeTypes.getName()){
+            case "date_of_birth":
+                dto.setLabel(DOB_LABEL);
+                break;
+            case "facebookid":
+                dto.setLabel(DOB_FACEBOOK_ID);
+                break;
+            case "githubid":
+                dto.setLabel(DOB_GITHUB_ID);
+                break;
+            case "passport_number":
+                dto.setLabel(DOB_PASSPORT);
+                break;
+        }
         dto.setValidation(attributeTypes.getValidation());
         return dto;
     }
@@ -43,5 +64,10 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
         return attributeTypesDtos.stream()
                 .map(this::convertToEntity)
                 .toList();
+    }
+
+    private String firstUpperCase(String word){
+        if(word == null || word.isEmpty()) return word;
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
     }
 }

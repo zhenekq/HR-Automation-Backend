@@ -6,7 +6,9 @@ import by.mifort.automation.hr.dev.service.duplicates.DuplicatesStrategyName;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class ResultStrategy implements DuplicatesStrategy {
@@ -25,12 +27,12 @@ public class ResultStrategy implements DuplicatesStrategy {
 
     @Override
     public List<List<Candidate>> getDuplicates() {
-        List<List<Candidate>> result = new ArrayList<>();
+        Set<List<Candidate>> result = new HashSet<>();
         result.addAll(companyCityFirstnameLastnameStrategy.getDuplicates());
         result.addAll(dobFirstnameLastnameCityStrategy.getDuplicates());
         result.addAll(keyAttributeStrategy.getDuplicates());
         result.addAll(passportFirstnameLastnameDateCityStrategy.getDuplicates());
-        return result;
+        return result.stream().toList();
     }
 
     @Override
