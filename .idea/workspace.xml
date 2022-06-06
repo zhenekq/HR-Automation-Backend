@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="" />
+    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/CandidateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/CandidateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,7 +238,7 @@
       <workItem from="1654208758706" duration="1495000" />
       <workItem from="1654500598525" duration="2375000" />
       <workItem from="1654506980607" duration="3414000" />
-      <workItem from="1654516585384" duration="2907000" />
+      <workItem from="1654516585384" duration="4946000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -386,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654519626957</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="dont care">
+      <created>1654520863082</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1654520863082</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

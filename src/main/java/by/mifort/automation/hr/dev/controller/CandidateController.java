@@ -102,10 +102,4 @@ public class CandidateController {
         Candidate candidate = candidateService.getById(id);
         return keywordService.createByCandidateId(id, filterDto);
     }
-
-
-    @GetMapping("/test")
-    public String pp(){
-        return "CI is WORKING";
-    }
 }

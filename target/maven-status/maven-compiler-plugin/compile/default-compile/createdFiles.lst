@@ -11,6 +11,7 @@ by\mifort\automation\hr\dev\entity\Candidate.class
 by\mifort\automation\hr\dev\controller\DuplicateController.class
 by\mifort\automation\hr\dev\service\impl\CandidateServiceImpl.class
 by\mifort\automation\hr\dev\entity\AttributeTypes.class
+by\mifort\automation\hr\dev\controller\TestController.class
 by\mifort\automation\hr\dev\util\converter\impl\CommunicationHistoryConverter.class
 by\mifort\automation\hr\dev\service\KeywordService.class
 by\mifort\automation\hr\dev\util\converter\impl\CandidateMergeConverter.class
