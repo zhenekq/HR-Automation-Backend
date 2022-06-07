@@ -9,7 +9,6 @@ public class CandidateValidator implements EntityValidator<Candidate> {
     @Override
     public boolean isValidParams(Candidate candidate) {
         return  candidate.getStatus() != null &&
-                candidate.getLastContact() != null &&
                 candidate.getId() != null;
     }
 }
