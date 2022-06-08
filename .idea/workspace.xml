@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
+    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="check is CI working (2nd try)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/TestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +232,8 @@
       <workItem from="1654208758706" duration="1495000" />
       <workItem from="1654500598525" duration="2375000" />
       <workItem from="1654506980607" duration="3414000" />
-      <workItem from="1654516585384" duration="8401000" />
+      <workItem from="1654516585384" duration="11685000" />
+      <workItem from="1654598111262" duration="5138000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -438,7 +438,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654525383631</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="check is CI working (2nd try)">
+      <created>1654534252334</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1654534252334</updated>
+    </task>
+    <task id="LOCAL-00031" summary="v 1.12">
+      <created>1654589665196</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1654589665196</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +491,9 @@
     <MESSAGE value="Fixed isArchived column from AttributeTypes to CandidateAttributes" />
     <MESSAGE value="Little validation for create user" />
     <MESSAGE value="dont care" />
-    <option name="LAST_COMMIT_MESSAGE" value="dont care" />
+    <MESSAGE value="check is CI working (2nd try)" />
+    <MESSAGE value="v 1.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 1.12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

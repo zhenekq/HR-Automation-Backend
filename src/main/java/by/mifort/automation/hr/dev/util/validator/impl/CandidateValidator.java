@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 public class CandidateValidator implements EntityValidator<Candidate> {
     @Override
     public boolean isValidParams(Candidate candidate) {
-        return  candidate.getStatus() != null &&
-                candidate.getId() != null;
+        return candidate.getId() != null;
     }
 }
