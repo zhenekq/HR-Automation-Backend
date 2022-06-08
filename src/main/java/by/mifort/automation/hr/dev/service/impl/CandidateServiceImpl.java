@@ -18,8 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import java.sql.Timestamp;
-import java.time.Instant;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class CandidateServiceImpl implements CandidateService {
@@ -65,6 +66,7 @@ public class CandidateServiceImpl implements CandidateService {
                     .isPresent();
             if(!isCandidateExists){
                 candidate.setLastContact(new Timestamp(new Date().getTime()));
+                candidate.setStatus("created");
                 candidateRepository.save(candidate);
                 candidateAttributesRepository.saveAll(emptyList(candidate));
                 return candidate;

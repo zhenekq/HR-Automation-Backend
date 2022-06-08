@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="check is CI working (2nd try)">
+    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="delete status from required rule">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/validator/impl/CandidateValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/validator/impl/CandidateValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +97,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -233,7 +238,8 @@
       <workItem from="1654500598525" duration="2375000" />
       <workItem from="1654506980607" duration="3414000" />
       <workItem from="1654516585384" duration="11685000" />
-      <workItem from="1654598111262" duration="5138000" />
+      <workItem from="1654598111262" duration="5739000" />
+      <workItem from="1654691561184" duration="295000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -452,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654589665196</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="delete status from required rule">
+      <created>1654690173383</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1654690173383</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +506,8 @@
     <MESSAGE value="dont care" />
     <MESSAGE value="check is CI working (2nd try)" />
     <MESSAGE value="v 1.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 1.12" />
+    <MESSAGE value="delete status from required rule" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete status from required rule" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
