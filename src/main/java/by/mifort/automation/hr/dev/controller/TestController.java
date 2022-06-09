@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping
-    public String vo(){
+    public String vo() {
         return "CI is WORKING123!";
+    }
+
+    @GetMapping("/static")
+    public String staticUrl() {
+        return "STATIC IP IS WORKING";
     }
 }
