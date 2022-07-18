@@ -10,7 +10,6 @@ import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 
 import java.sql.Timestamp;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class    AsserDifferencesCandidateListAttributes {
 

@@ -22,9 +22,6 @@ public class CommunicationHistoryDto {
     private String comment;
     private Boolean isArchived;
 
-    public CommunicationHistoryDto() {
-    }
-
     public Integer getId() {
         return id;
     }

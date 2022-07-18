@@ -4,8 +4,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import java.util.Objects;
-
 public class CandidateMergeDto {
 
     private Integer id;
@@ -14,8 +12,6 @@ public class CandidateMergeDto {
     private String reasonComment;
     private String candidate1;
     private String candidate2;
-
-    public CandidateMergeDto(){}
 
     public Integer getId() {
         return id;

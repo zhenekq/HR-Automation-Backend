@@ -16,7 +16,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -142,7 +141,7 @@ class CandidateAttributeControllerTest {
         String existCandidateId = "yauheni_vozny";
         Integer attributeType = 1;
         List<CandidateAttributes> createAttribute = new ArrayList<>();
-        CandidateAttributes attributes = h2Database.getCandidateAttributesWithRandomValues(existCandidateId, attributeType);;
+        CandidateAttributes attributes = h2Database.getCandidateAttributesWithRandomValues(existCandidateId, attributeType);
         attributes.setValue(null);
         createAttribute.add(attributes);
         assertThrows(IllegalArgumentException.class,

@@ -1,9 +1,6 @@
 package by.mifort.automation.hr.dev.controller;
 
 import by.mifort.automation.hr.dev.dto.CandidateUpdateDto;
-import by.mifort.automation.hr.dev.dto.ChangeSet;
-import by.mifort.automation.hr.dev.dto.Type;
-import by.mifort.automation.hr.dev.entity.Candidate;
 import by.mifort.automation.hr.dev.entity.CandidateUpdate;
 import by.mifort.automation.hr.dev.service.CandidateUpdatesService;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
@@ -12,8 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
 /**
  * Controller that handles requests about candidates updates

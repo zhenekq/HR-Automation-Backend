@@ -2,7 +2,6 @@ package by.mifort.automation.hr.dev.dto;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * Data transfer object for entity CandidateAttributes
@@ -18,9 +17,6 @@ public class CandidateAttributesDto {
     private Integer valueSource;
     private String name;
     private Boolean isArchived;
-
-    public CandidateAttributesDto() {
-    }
 
     public Integer getId() {
         return id;

@@ -2,15 +2,11 @@ package by.mifort.automation.hr.dev.service.duplicates.strategies;
 
 import by.mifort.automation.hr.dev.dto.FilterDto;
 import by.mifort.automation.hr.dev.entity.Candidate;
-import by.mifort.automation.hr.dev.entity.CandidateAttributes;
-import by.mifort.automation.hr.dev.repository.CandidateAttributesRepository;
 import by.mifort.automation.hr.dev.service.CandidateService;
 import by.mifort.automation.hr.dev.service.duplicates.DuplicatesStrategy;
 import by.mifort.automation.hr.dev.service.duplicates.DuplicatesStrategyName;
 import by.mifort.automation.hr.dev.service.duplicates.comparator.KeyAttributeComparator;
-import by.mifort.automation.hr.dev.service.duplicates.comparator.SingleAttributeComparator;
 import by.mifort.automation.hr.dev.service.duplicates.separate.SeparateService;
-import liquibase.pro.packaged.F;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

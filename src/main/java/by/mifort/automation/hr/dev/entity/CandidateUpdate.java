@@ -15,7 +15,6 @@ import org.hibernate.annotations.TypeDefs;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Updates about candidate

@@ -3,13 +3,10 @@ package by.mifort.automation.hr.dev.controller;
 import by.mifort.automation.hr.dev.dto.CandidateDto;
 import by.mifort.automation.hr.dev.dto.FilterDto;
 import by.mifort.automation.hr.dev.entity.Candidate;
-import by.mifort.automation.hr.dev.entity.CandidateAttributes;
 import by.mifort.automation.hr.dev.entity.Keyword;
 import by.mifort.automation.hr.dev.service.CandidateService;
 import by.mifort.automation.hr.dev.service.KeywordService;
-import by.mifort.automation.hr.dev.service.duplicates.DuplicatesStrategy;
 import by.mifort.automation.hr.dev.service.duplicates.DuplicatesStrategyFactory;
-import by.mifort.automation.hr.dev.service.duplicates.DuplicatesStrategyName;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,9 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * Controller that handles requests about candidates
@@ -99,7 +94,7 @@ public class CandidateController {
     @PostMapping("/{id}")
     public List<Keyword> addKeywords(@PathVariable String id,
                                      FilterDto filterDto){
-        Candidate candidate = candidateService.getById(id);
+        candidateService.getById(id);
         return keywordService.createByCandidateId(id, filterDto);
     }
 }

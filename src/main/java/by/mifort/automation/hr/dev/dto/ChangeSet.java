@@ -1,7 +1,5 @@
 package by.mifort.automation.hr.dev.dto;
 
-import java.util.Map;
-
 public class ChangeSet {
 
     private Type type;

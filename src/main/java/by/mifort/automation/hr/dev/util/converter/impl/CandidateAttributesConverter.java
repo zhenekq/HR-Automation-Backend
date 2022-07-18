@@ -5,7 +5,6 @@ import by.mifort.automation.hr.dev.entity.AttributeTypes;
 import by.mifort.automation.hr.dev.entity.Candidate;
 import by.mifort.automation.hr.dev.entity.CandidateAttributes;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
-import liquibase.pro.packaged.A;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

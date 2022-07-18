@@ -1,15 +1,15 @@
 package by.mifort.automation.hr.dev.db;
 
-import by.mifort.automation.hr.dev.entity.*;
+import by.mifort.automation.hr.dev.entity.AttributeTypes;
+import by.mifort.automation.hr.dev.entity.Candidate;
+import by.mifort.automation.hr.dev.entity.CandidateAttributes;
+import by.mifort.automation.hr.dev.entity.CommunicationHistory;
 import net.bytebuddy.utility.RandomString;
 import org.apache.commons.lang3.RandomUtils;
-import org.checkerframework.checker.units.qual.C;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class H2Database {
     private static final H2Database instance = new H2Database();

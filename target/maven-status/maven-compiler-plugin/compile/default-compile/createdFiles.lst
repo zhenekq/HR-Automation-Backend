@@ -74,6 +74,7 @@ by\mifort\automation\hr\dev\repository\CommunicationHistoryRepository.class
 by\mifort\automation\hr\dev\service\duplicates\comparator\KeyAttributeComparator.class
 by\mifort\automation\hr\dev\controller\CandidateAttributeController.class
 by\mifort\automation\hr\dev\service\impl\CommunicationHistoryServiceImpl.class
+by\mifort\automation\hr\dev\util\StringUtil.class
 by\mifort\automation\hr\dev\entity\CandidateMerge.class
 by\mifort\automation\hr\dev\entity\CandidateAttributes.class
 by\mifort\automation\hr\dev\service\CandidateUpdatesService.class

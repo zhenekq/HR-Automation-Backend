@@ -37,6 +37,8 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
             case "passport_number":
                 dto.setLabel(DOB_PASSPORT);
                 break;
+            default:
+                break;
         }
         dto.setValidation(attributeTypes.getValidation());
         return dto;

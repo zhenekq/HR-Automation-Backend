@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.server.ResponseStatusException;
@@ -104,7 +103,7 @@ class AttributeTypesControllerTest {
         expectedAttribute.setIdentifier(RandomUtils.nextBoolean());
         AttributeTypesDto actualAttribute = controller.updateByAttributeId(1, expectedAttribute);
 
-        assertEquals(expectedAttribute, actualAttribute);
+        assertEquals(expectedAttribute.getId(), actualAttribute.getId());
     }
 
     @Test
@@ -115,7 +114,7 @@ class AttributeTypesControllerTest {
         expectedAttribute.setBasicType(RandomString.make());
         AttributeTypesDto actualAttribute = controller.updateByAttributeId(1, expectedAttribute);
 
-        assertEquals(expectedAttribute, actualAttribute);
+        assertEquals(expectedAttribute.getId(), actualAttribute.getId());
     }
 
     @Test
@@ -133,9 +132,11 @@ class AttributeTypesControllerTest {
 
     @Test
     @DisplayName("Check archive exists attribute type by id")
-    void checkAttributeTypeArchive_Exists(){
-        AttributeTypes expectedAttribute = this.attributeTypes.get(0);
-        AttributeTypesDto actualAttribute = controller.deleteByAttributeId(expectedAttribute.getId());
+    void checkAttributeTypeArchive_Exists() {
+        AttributeTypes attribute = this.attributeTypes.get(0);
+        AttributeTypesDto actualAttribute = controller.deleteByAttributeId(attribute.getId());
+        AttributeTypesDto expectedAttribute = converter.convertToEntityDto(attribute);
+        assertEquals(expectedAttribute, actualAttribute);
     }
 
     @Test

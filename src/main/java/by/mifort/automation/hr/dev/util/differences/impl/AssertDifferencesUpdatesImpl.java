@@ -6,7 +6,6 @@ import by.mifort.automation.hr.dev.entity.*;
 import by.mifort.automation.hr.dev.util.differences.AssertDifferencesUpdates;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
