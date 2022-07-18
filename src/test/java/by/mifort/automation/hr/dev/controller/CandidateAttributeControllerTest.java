@@ -1,7 +1,9 @@
 package by.mifort.automation.hr.dev.controller;
 
 import by.mifort.automation.hr.dev.db.H2Database;
+import by.mifort.automation.hr.dev.dto.AttributeTypesDto;
 import by.mifort.automation.hr.dev.dto.CandidateAttributesDto;
+import by.mifort.automation.hr.dev.entity.AttributeTypes;
 import by.mifort.automation.hr.dev.entity.CandidateAttributes;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import net.bytebuddy.utility.RandomString;
@@ -33,20 +35,24 @@ class CandidateAttributeControllerTest {
     private final H2Database h2Database = H2Database.getInstance();
     private List<CandidateAttributes> attributesList;
 
+    private final EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter;
+
     static int flag = 0;
 
     @Autowired
-    CandidateAttributeControllerTest(CandidateAttributeController controller, CandidateController candidateController, AttributeTypesController typesController, EntityConverter<CandidateAttributes, CandidateAttributesDto> converter) {
+    CandidateAttributeControllerTest(CandidateAttributeController controller, CandidateController candidateController, AttributeTypesController typesController, EntityConverter<CandidateAttributes, CandidateAttributesDto> converter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter) {
         this.controller = controller;
         this.candidateController = candidateController;
         this.typesController = typesController;
         this.converter = converter;
+        this.attributeTypesConverter = attributeTypesConverter;
     }
 
     @BeforeEach
     void init(){
         if(flag == 0) {
-            h2Database.initializeAttributeTypes().forEach(typesController::create);
+            List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
+            types.forEach(typesController::create);
             h2Database.initializeCandidates().forEach(candidateController::create);
             attributesList = h2Database.initializeCandidateAttributes();
             List<CandidateAttributes> yauheni_attributes = attributesList.subList(0, 14);

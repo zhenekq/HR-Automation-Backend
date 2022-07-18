@@ -1,8 +1,10 @@
 package by.mifort.automation.hr.dev.controller;
 
 import by.mifort.automation.hr.dev.db.H2Database;
+import by.mifort.automation.hr.dev.dto.AttributeTypesDto;
 import by.mifort.automation.hr.dev.dto.CommunicationHistoryDto;
 import by.mifort.automation.hr.dev.dto.FilterDto;
+import by.mifort.automation.hr.dev.entity.AttributeTypes;
 import by.mifort.automation.hr.dev.entity.Candidate;
 import by.mifort.automation.hr.dev.entity.CommunicationHistory;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
@@ -37,25 +39,28 @@ class CandidateHistoryControllerTest {
     private final AttributeTypesController attributeTypesController;
     private List<CommunicationHistory> histories = H2Database.getInstance().initializeHistories();
     private final EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter;
+    private final EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter;
     static int flag = 0;
 
     @Autowired
-    CandidateHistoryControllerTest(CandidateHistoryController historyController, CandidateController candidateController, AttributeTypesController attributeTypesController, EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter) {
+    CandidateHistoryControllerTest(CandidateHistoryController historyController, CandidateController candidateController, AttributeTypesController attributeTypesController, EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter) {
         this.historyController = historyController;
         this.candidateController = candidateController;
         this.attributeTypesController = attributeTypesController;
         this.converter = converter;
+        this.attributeTypesConverter = attributeTypesConverter;
     }
 
     @BeforeEach
     public void init(){
-        if(flag == 0){
-            H2Database.getInstance().initializeAttributeTypes().forEach(attributeTypesController::create);
+        if(flag == 0) {
+            List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
+            types.forEach(attributeTypesController::create);
             H2Database.getInstance().initializeCandidates().forEach(candidateController::create);
             H2Database.getInstance().initializeHistories().forEach(
-                    history -> historyController.createByCandidateId(history.getCandidate().getId(), history)
+                    history -> historyController.createByCandidateId(history.getCandidate().getId(), converter.convertToEntityDto(history))
             );
-         flag++;
+            flag++;
         }
         histories = H2Database.getInstance().initializeHistories();
     }
@@ -110,9 +115,9 @@ class CandidateHistoryControllerTest {
     void checkWhenCommunicationHistoryCreate_CandidateExists() {
         CommunicationHistory createHistory = new CommunicationHistory(new Timestamp(RandomUtils.nextLong()),
                 new Timestamp(RandomUtils.nextLong()), RandomString.make(), Boolean.FALSE, new Candidate("artem_skrebets"));
-        CommunicationHistoryDto actualHistory = historyController.createByCandidateId("artem_skrebets", createHistory);
+        CommunicationHistoryDto actualHistory = historyController.createByCandidateId("artem_skrebets", converter.convertToEntityDto(createHistory));
         CommunicationHistoryDto expectedHistory = converter.convertToEntityDto(createHistory);
-        assertEquals(actualHistory, expectedHistory);
+        assertEquals(actualHistory.getComment(), expectedHistory.getComment());
     }
 
     @Test
@@ -122,7 +127,7 @@ class CandidateHistoryControllerTest {
         CommunicationHistory createHistory = new CommunicationHistory(new Timestamp(RandomUtils.nextLong()),
                 new Timestamp(RandomUtils.nextLong()), RandomString.make(), Boolean.FALSE, new Candidate(randomCandidate));
         assertThrows(EntityNotFoundException.class,
-                () -> historyController.createByCandidateId(randomCandidate, createHistory),
+                () -> historyController.createByCandidateId(randomCandidate, converter.convertToEntityDto(createHistory)),
                 "Candidate do not exists!");
     }
 

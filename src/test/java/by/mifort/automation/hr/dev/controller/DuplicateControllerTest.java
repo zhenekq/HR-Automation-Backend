@@ -1,7 +1,9 @@
 package by.mifort.automation.hr.dev.controller;
 
 import by.mifort.automation.hr.dev.db.H2Database;
+import by.mifort.automation.hr.dev.dto.AttributeTypesDto;
 import by.mifort.automation.hr.dev.dto.CandidateDto;
+import by.mifort.automation.hr.dev.entity.AttributeTypes;
 import by.mifort.automation.hr.dev.entity.Candidate;
 import by.mifort.automation.hr.dev.entity.CandidateAttributes;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
@@ -31,22 +33,27 @@ public class DuplicateControllerTest {
     private final AttributeTypesController attributeTypesController;
     private final EntityConverter<Candidate, CandidateDto> converter;
     private final H2Database h2Database = H2Database.getInstance();
+    private final EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter;
     static int flag = 0;
+
     @Autowired
-    public DuplicateControllerTest(DuplicateController duplicateController, CandidateController candidateController, CandidateAttributeController candidateAttributeController, AttributeTypesController attributeTypesController, EntityConverter<Candidate, CandidateDto> converter) {
+    public DuplicateControllerTest(DuplicateController duplicateController, CandidateController candidateController, CandidateAttributeController candidateAttributeController, AttributeTypesController attributeTypesController, EntityConverter<Candidate, CandidateDto> converter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter) {
         this.duplicateController = duplicateController;
         this.candidateController = candidateController;
         this.candidateAttributeController = candidateAttributeController;
         this.attributeTypesController = attributeTypesController;
         this.converter = converter;
+        this.attributeTypesConverter = attributeTypesConverter;
     }
 
     @BeforeEach
     void init(){
         if(flag == 0) {
-            h2Database.initializeAttributeTypes().forEach(attributeTypesController::create);
+            List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
+            types.forEach(attributeTypesController::create);
             h2Database.initializeCandidates().forEach(candidateController::create);
-            h2Database.initializeAttributeTypes().forEach(attributeTypesController::create);
+            types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
+            types.forEach(attributeTypesController::create);
 
             List<CandidateAttributes> yauheni_attributes = h2Database.initializeCandidateAttributes().subList(0, 14);
             candidateAttributeController.createByCandidateId("yauheni_vozny", yauheni_attributes);

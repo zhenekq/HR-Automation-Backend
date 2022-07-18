@@ -1,8 +1,10 @@
 package by.mifort.automation.hr.dev.controller;
 
 import by.mifort.automation.hr.dev.db.H2Database;
+import by.mifort.automation.hr.dev.dto.AttributeTypesDto;
 import by.mifort.automation.hr.dev.dto.CandidateDto;
 import by.mifort.automation.hr.dev.dto.FilterDto;
+import by.mifort.automation.hr.dev.entity.AttributeTypes;
 import by.mifort.automation.hr.dev.entity.Candidate;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import net.bytebuddy.utility.RandomString;
@@ -38,21 +40,24 @@ public class CandidateControllerTest {
     private final CandidateAttributeController candidateAttributeController;
     private final H2Database h2Database = H2Database.getInstance();
     private List<Candidate> dbCandidates = new ArrayList<>();
+    private final EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter;
     static int a = 0;
 
     @Autowired
-    public CandidateControllerTest(CandidateController controller, EntityConverter<Candidate, CandidateDto> converter, AttributeTypesController attributeTypesController, CandidateAttributeController candidateAttributeController) {
+    public CandidateControllerTest(CandidateController controller, EntityConverter<Candidate, CandidateDto> converter, AttributeTypesController attributeTypesController, CandidateAttributeController candidateAttributeController, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter) {
         this.controller = controller;
         this.converter = converter;
         this.attributeTypesController = attributeTypesController;
         this.candidateAttributeController = candidateAttributeController;
+        this.attributeTypesConverter = attributeTypesConverter;
     }
 
     @BeforeEach
     void init() {
         if(a == 0) {
             this.dbCandidates = h2Database.initializeCandidates();
-            h2Database.initializeAttributeTypes().forEach(attributeTypesController::create);
+            List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
+            types.forEach(attributeTypesController::create);
             h2Database.initializeCandidates().forEach(controller::create);
             a++;
         }
@@ -108,9 +113,9 @@ public class CandidateControllerTest {
     @DisplayName("Check is exists candidate cannot be created")
     void checkIsCandidateCreatedWithExistsId() {
         Candidate existsCandidate = h2Database.getCandidateWithRandomValues();
-        existsCandidate.setStatus(null);
+        existsCandidate.setId(null);
         assertThrows(IllegalArgumentException.class,
-                    () -> controller.create(existsCandidate),
+                () -> controller.create(existsCandidate),
                 "Fields cannot be nullable");
     }
 

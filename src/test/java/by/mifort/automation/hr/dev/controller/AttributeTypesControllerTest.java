@@ -31,7 +31,7 @@ class AttributeTypesControllerTest {
     private final AttributeTypesController controller;
     private final H2Database h2Database = H2Database.getInstance();
     private final EntityConverter<AttributeTypes, AttributeTypesDto> converter;
-    private List<AttributeTypes> attributeTypes;
+    private List<AttributeTypesDto> attributeTypes;
 
     @Autowired
     AttributeTypesControllerTest(AttributeTypesController controller, EntityConverter<AttributeTypes, AttributeTypesDto> converter) {
@@ -41,7 +41,7 @@ class AttributeTypesControllerTest {
 
     @BeforeEach
     void init(){
-        attributeTypes = h2Database.initializeAttributeTypes();
+        attributeTypes = converter.convertToListEntityDto(h2Database.initializeAttributeTypes());
         attributeTypes.forEach(controller::create);
     }
 
@@ -58,7 +58,7 @@ class AttributeTypesControllerTest {
     @DisplayName("Create attribute type with correct data")
     void checkAttributeTypeCreate_CorrectData(){
         AttributeTypes createAttribute = h2Database.getAttributeTypeWithRandomValues();
-        AttributeTypesDto actualAttributeType = controller.create(createAttribute);
+        AttributeTypesDto actualAttributeType = controller.create(converter.convertToEntityDto(createAttribute));
         AttributeTypesDto expectedAttributeType = controller.getById(actualAttributeType.getId());
 
         assertEquals(actualAttributeType, expectedAttributeType);
@@ -66,20 +66,19 @@ class AttributeTypesControllerTest {
 
     @Test
     @DisplayName("Create attribute type with incorrect data")
-    void checkAttributeTypeCreate_IncorrectData(){
+    void checkAttributeTypeCreate_IncorrectData() {
         AttributeTypes createAttribute = h2Database.getAttributeTypeWithRandomValues();
         createAttribute.setName(null);
-        assertThrows(IllegalArgumentException.class,
-                () -> controller.create(createAttribute),
+        assertThrows(NullPointerException.class,
+                () -> controller.create(converter.convertToEntityDto(createAttribute)),
                 "Parameters cannot be nullable!");
     }
 
     @Test
     @DisplayName("Check exists attribute type by id")
     void checkAttributeTypeById_NotNull(){
-        AttributeTypes attribute = this.attributeTypes.get(0);
+        AttributeTypesDto expectedAttribute = this.attributeTypes.get(0);
         AttributeTypesDto actualAttribute = controller.getById(1);
-        AttributeTypesDto expectedAttribute = converter.convertToEntityDto(attribute);
 
         assertEquals(actualAttribute, expectedAttribute);
     }
@@ -96,7 +95,7 @@ class AttributeTypesControllerTest {
     @Test
     @DisplayName("Check update exists attribute type by id, all fields")
     void checkAttributeTypeUpdateById_ExistsNotNull_AllFields(){
-        AttributeTypesDto expectedAttribute = converter.convertToEntityDto(this.attributeTypes.get(0));
+        AttributeTypesDto expectedAttribute = this.attributeTypes.get(0);
         expectedAttribute.setName(RandomString.make());
         expectedAttribute.setBasicType(RandomString.make());
         expectedAttribute.setValidation(RandomString.make());
@@ -109,7 +108,7 @@ class AttributeTypesControllerTest {
     @Test
     @DisplayName("Check update exists attribute type by id, not all fields")
     void checkAttributeTypeUpdateById_ExistsNotNull_NotAllFields(){
-        AttributeTypesDto expectedAttribute = converter.convertToEntityDto(this.attributeTypes.get(0));
+        AttributeTypesDto expectedAttribute = this.attributeTypes.get(0);
         expectedAttribute.setName(RandomString.make());
         expectedAttribute.setBasicType(RandomString.make());
         AttributeTypesDto actualAttribute = controller.updateByAttributeId(1, expectedAttribute);
@@ -133,7 +132,7 @@ class AttributeTypesControllerTest {
     @Test
     @DisplayName("Check archive exists attribute type by id")
     void checkAttributeTypeArchive_Exists() {
-        AttributeTypes attribute = this.attributeTypes.get(0);
+        AttributeTypes attribute = converter.convertToEntity(this.attributeTypes.get(0));
         AttributeTypesDto actualAttribute = controller.deleteByAttributeId(attribute.getId());
         AttributeTypesDto expectedAttribute = converter.convertToEntityDto(attribute);
         assertEquals(expectedAttribute, actualAttribute);
