@@ -55,8 +55,8 @@ public class CandidateHistoryController {
     @ApiOperation("Create new history with candidate by his id")
     @PostMapping
     public CommunicationHistoryDto createByCandidateId(@PathVariable String id,
-                                                       @RequestBody CommunicationHistory history) {
-        CommunicationHistory createdHistory = service.createByCandidateId(id, history);
+                                                       @RequestBody CommunicationHistoryDto history) {
+        CommunicationHistory createdHistory = service.createByCandidateId(id, converter.convertToEntity(history));
         return converter.convertToEntityDto(createdHistory);
     }
 

@@ -52,8 +52,8 @@ public class CandidateUpdatesController {
      */
     @PostMapping
     @ApiOperation("Create new update for candidate")
-    public CandidateUpdateDto create(@PathVariable String id, @RequestBody CandidateUpdate update){
-        CandidateUpdate newUpdate = service.createByCandidateId(id, update);
+    public CandidateUpdateDto create(@PathVariable String id, @RequestBody CandidateUpdateDto update) {
+        CandidateUpdate newUpdate = service.createByCandidateId(id, converter.convertToEntity(update));
         return converter.convertToEntityDto(newUpdate);
     }
 

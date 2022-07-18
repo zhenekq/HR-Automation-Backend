@@ -60,8 +60,8 @@ public class AttributeTypesController {
      */
     @ApiOperation("Create new attribute type")
     @PostMapping
-    public AttributeTypesDto create(@RequestBody AttributeTypes type) {
-        AttributeTypes types = service.create(type);
+    public AttributeTypesDto create(@RequestBody AttributeTypesDto type) {
+        AttributeTypes types = service.create(converter.convertToEntity(type));
         return converter.convertToEntityDto(types);
     }
 

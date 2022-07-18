@@ -34,8 +34,8 @@ public class CandidateMergeController {
     }
 
     @PostMapping
-    public CandidateMergeDto create(@RequestBody CandidateMerge merge){
-        return converter.convertToEntityDto(service.create(merge));
+    public CandidateMergeDto create(@RequestBody CandidateMergeDto merge) {
+        return converter.convertToEntityDto(service.create(converter.convertToEntity(merge)));
     }
 
     @PostMapping ("{id}")
