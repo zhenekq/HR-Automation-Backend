@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/DevApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/DevApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CommunicationHistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CommunicationHistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/StringUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +243,7 @@
       <workItem from="1655053751427" duration="14379000" />
       <workItem from="1656100711051" duration="911000" />
       <workItem from="1656263432829" duration="845000" />
-      <workItem from="1658174061341" duration="3199000" />
+      <workItem from="1658174061341" duration="4627000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -494,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658177064563</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="little part of sonar fixes (2)">
+      <created>1658177300421</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1658177300421</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Tested candidate controller test" />
     <MESSAGE value="Tested communication history controller and some fixes" />
     <MESSAGE value="Attribute types tests completed and some fixes" />
     <MESSAGE value="Candidate attributes test created and some fixes" />
@@ -542,7 +551,8 @@
     <MESSAGE value="test static ip" />
     <MESSAGE value="check commit" />
     <MESSAGE value="little part of sonar fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="little part of sonar fixes" />
+    <MESSAGE value="little part of sonar fixes (2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="little part of sonar fixes (2)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -9,6 +9,7 @@ import by.mifort.automation.hr.dev.repository.CandidateAttributesRepository;
 import by.mifort.automation.hr.dev.repository.CandidateRepository;
 import by.mifort.automation.hr.dev.repository.CandidateUpdateRepository;
 import by.mifort.automation.hr.dev.service.CandidateAttributesService;
+import by.mifort.automation.hr.dev.util.StringUtil;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import by.mifort.automation.hr.dev.util.differences.impl.AsserDifferencesCandidateListAttributes;
 import by.mifort.automation.hr.dev.util.validator.EntityValidator;
@@ -41,9 +42,9 @@ public class CandidateAttributesServiceImpl implements CandidateAttributesServic
 
     @Override
     public List<CandidateAttributes> getByCandidateId(String candidateId) {
-        candidateRepository
-                .findById(candidateId)
-                .orElseThrow(()-> new EntityNotFoundException("Candidate with id: " + candidateId + " not found"));
+        if (candidateRepository.findById(candidateId).isEmpty()) {
+            throw new EntityNotFoundException(StringUtil.candidateTypeException(candidateId));
+        }
         return repository.findAllByCandidateId(candidateId);
     }
 
@@ -52,9 +53,9 @@ public class CandidateAttributesServiceImpl implements CandidateAttributesServic
     public List<CandidateAttributes> createByCandidateId(String candidateId, List<CandidateAttributes> attributes) {
         List<CandidateAttributes> candidateAttributes = getByCandidateId(candidateId);
         CandidateUpdate update = AsserDifferencesCandidateListAttributes.getUpdates(candidateAttributes, attributes);
-        candidateRepository
-                .findById(candidateId)
-                .orElseThrow( () -> new EntityNotFoundException("Candidate not exists"));
+        if (candidateRepository.findById(candidateId).isEmpty()) {
+            throw new EntityNotFoundException(StringUtil.candidateTypeException(candidateId));
+        }
         attributes.forEach(
                 p -> p.setCandidate(new Candidate(candidateId))
         );
@@ -63,7 +64,7 @@ public class CandidateAttributesServiceImpl implements CandidateAttributesServic
                         .findById(attribute.getAttributeTypes().getId())
                         .orElseThrow(() -> new EntityNotFoundException("Attribute type not found!"))
         );
-        if(validator.isValidParams(attributes)){
+        if (validator.isValidParams(attributes)) {
             List<CandidateAttributes> attr = AsserDifferencesCandidateListAttributes.assertDiff(
                     candidateAttributes, attributes);
             repository.saveAll(attr);

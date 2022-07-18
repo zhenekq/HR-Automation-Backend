@@ -7,6 +7,7 @@ import by.mifort.automation.hr.dev.entity.CommunicationHistory;
 import by.mifort.automation.hr.dev.repository.CandidateRepository;
 import by.mifort.automation.hr.dev.repository.CommunicationHistoryRepository;
 import by.mifort.automation.hr.dev.service.CommunicationHistoryService;
+import by.mifort.automation.hr.dev.util.StringUtil;
 import by.mifort.automation.hr.dev.util.differences.AssertDifferencesUpdates;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import javax.persistence.EntityNotFoundException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CommunicationHistoryServiceImpl implements CommunicationHistoryService {
@@ -35,9 +37,9 @@ public class CommunicationHistoryServiceImpl implements CommunicationHistoryServ
 
     @Override
     public List<CommunicationHistory> getByCandidateId(String candidateId, FilterDto filterDto) {
-        candidateRepository
-                .findById(candidateId)
-                .orElseThrow(() ->  new EntityNotFoundException("Candidate with id: " + candidateId + " not found!"));
+        if (candidateRepository.findById(candidateId).isEmpty()) {
+            throw new EntityNotFoundException(StringUtil.candidateTypeException(candidateId));
+        }
         List<CommunicationHistory> communicationHistory;
         if (filterDto.getIsArchived() == null || !filterDto.getIsArchived()) {
             communicationHistory = repository
@@ -52,8 +54,11 @@ public class CommunicationHistoryServiceImpl implements CommunicationHistoryServ
     @Override
     @Transactional
     public CommunicationHistory createByCandidateId(String candidateId, CommunicationHistory history) {
-        Candidate candidate = candidateRepository.findById(candidateId)
-                        .orElseThrow(() -> new EntityNotFoundException("Candidate not found!"));
+        Optional<Candidate> optionalCandidate = candidateRepository.findById(candidateId);
+        if (optionalCandidate.isEmpty()) {
+            throw new EntityNotFoundException(StringUtil.candidateTypeException(candidateId));
+        }
+        Candidate candidate = optionalCandidate.get();
         history.setCandidate(candidate);
         history.setCreateDate(new Timestamp(new Date().getTime()));
         history.setUpdateDate(new Timestamp(new Date().getTime()));
