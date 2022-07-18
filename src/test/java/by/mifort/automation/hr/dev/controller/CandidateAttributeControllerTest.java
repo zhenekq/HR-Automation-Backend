@@ -3,7 +3,9 @@ package by.mifort.automation.hr.dev.controller;
 import by.mifort.automation.hr.dev.db.H2Database;
 import by.mifort.automation.hr.dev.dto.AttributeTypesDto;
 import by.mifort.automation.hr.dev.dto.CandidateAttributesDto;
+import by.mifort.automation.hr.dev.dto.CandidateDto;
 import by.mifort.automation.hr.dev.entity.AttributeTypes;
+import by.mifort.automation.hr.dev.entity.Candidate;
 import by.mifort.automation.hr.dev.entity.CandidateAttributes;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import net.bytebuddy.utility.RandomString;
@@ -31,6 +33,7 @@ class CandidateAttributeControllerTest {
     private final CandidateController candidateController;
     private final AttributeTypesController typesController;
     private final EntityConverter<CandidateAttributes, CandidateAttributesDto> converter;
+    private final EntityConverter<Candidate, CandidateDto> candidateConverter;
 
     private final H2Database h2Database = H2Database.getInstance();
     private List<CandidateAttributes> attributesList;
@@ -40,11 +43,12 @@ class CandidateAttributeControllerTest {
     static int flag = 0;
 
     @Autowired
-    CandidateAttributeControllerTest(CandidateAttributeController controller, CandidateController candidateController, AttributeTypesController typesController, EntityConverter<CandidateAttributes, CandidateAttributesDto> converter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter) {
+    CandidateAttributeControllerTest(CandidateAttributeController controller, CandidateController candidateController, AttributeTypesController typesController, EntityConverter<CandidateAttributes, CandidateAttributesDto> converter, EntityConverter<Candidate, CandidateDto> candidateConverter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter) {
         this.controller = controller;
         this.candidateController = candidateController;
         this.typesController = typesController;
         this.converter = converter;
+        this.candidateConverter = candidateConverter;
         this.attributeTypesConverter = attributeTypesConverter;
     }
 
@@ -53,7 +57,8 @@ class CandidateAttributeControllerTest {
         if(flag == 0) {
             List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(typesController::create);
-            h2Database.initializeCandidates().forEach(candidateController::create);
+            List<CandidateDto> candidateDto = candidateConverter.convertToListEntityDto(h2Database.initializeCandidates());
+            candidateDto.forEach(candidateController::create);
             attributesList = h2Database.initializeCandidateAttributes();
             List<CandidateAttributes> yauheni_attributes = attributesList.subList(0, 14);
             controller.createByCandidateId("yauheni_vozny", yauheni_attributes);

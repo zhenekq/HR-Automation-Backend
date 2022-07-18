@@ -2,6 +2,7 @@ package by.mifort.automation.hr.dev.controller;
 
 import by.mifort.automation.hr.dev.db.H2Database;
 import by.mifort.automation.hr.dev.dto.AttributeTypesDto;
+import by.mifort.automation.hr.dev.dto.CandidateDto;
 import by.mifort.automation.hr.dev.dto.CommunicationHistoryDto;
 import by.mifort.automation.hr.dev.dto.FilterDto;
 import by.mifort.automation.hr.dev.entity.AttributeTypes;
@@ -40,15 +41,18 @@ class CandidateHistoryControllerTest {
     private List<CommunicationHistory> histories = H2Database.getInstance().initializeHistories();
     private final EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter;
     private final EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter;
+    private final EntityConverter<Candidate, CandidateDto> candidateConverter;
+
     static int flag = 0;
 
     @Autowired
-    CandidateHistoryControllerTest(CandidateHistoryController historyController, CandidateController candidateController, AttributeTypesController attributeTypesController, EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter) {
+    CandidateHistoryControllerTest(CandidateHistoryController historyController, CandidateController candidateController, AttributeTypesController attributeTypesController, EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter, EntityConverter<Candidate, CandidateDto> candidateConverter) {
         this.historyController = historyController;
         this.candidateController = candidateController;
         this.attributeTypesController = attributeTypesController;
         this.converter = converter;
         this.attributeTypesConverter = attributeTypesConverter;
+        this.candidateConverter = candidateConverter;
     }
 
     @BeforeEach
@@ -56,7 +60,8 @@ class CandidateHistoryControllerTest {
         if(flag == 0) {
             List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(attributeTypesController::create);
-            H2Database.getInstance().initializeCandidates().forEach(candidateController::create);
+            List<CandidateDto> candidateDto = candidateConverter.convertToListEntityDto(H2Database.getInstance().initializeCandidates());
+            candidateDto.forEach(candidateController::create);
             H2Database.getInstance().initializeHistories().forEach(
                     history -> historyController.createByCandidateId(history.getCandidate().getId(), converter.convertToEntityDto(history))
             );

@@ -51,7 +51,8 @@ public class DuplicateControllerTest {
         if(flag == 0) {
             List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(attributeTypesController::create);
-            h2Database.initializeCandidates().forEach(candidateController::create);
+            List<CandidateDto> candidateDto = converter.convertToListEntityDto(h2Database.initializeCandidates());
+            candidateDto.forEach(candidateController::create);
             types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(attributeTypesController::create);
 

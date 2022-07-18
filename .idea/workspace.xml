@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/CandidateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/controller/CandidateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateAttributeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateAttributeControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/AttributeTypesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/AttributeTypesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/CandidateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/CandidateController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/CandidateHistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/CandidateHistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/CandidateMergeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/CandidateMergeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/CandidateUpdatesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/controller/CandidateUpdatesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CommunicationHistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CommunicationHistoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/KeywordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/KeywordServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/DevApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/DevApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/CandidateAttributeControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/CandidateAttributeControllerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/CandidateControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/CandidateControllerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.class" afterDir="false" />
@@ -127,7 +117,7 @@
       <recent name="by.mifort.automation.hr.dev.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CandidateHistoryControllerTest">
+  <component name="RunManager" selected="JUnit.DuplicateControllerTest">
     <configuration name="AttributeTypesControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HR-Automation-Backend" />
       <extension name="coverage">
@@ -212,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DuplicateControllerTest" />
         <item itemvalue="JUnit.CandidateHistoryControllerTest" />
         <item itemvalue="JUnit.CandidateControllerTest" />
         <item itemvalue="JUnit.CandidateAttributeControllerTest" />
         <item itemvalue="JUnit.AttributeTypesControllerTest" />
-        <item itemvalue="JUnit.DuplicateControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +252,7 @@
       <workItem from="1655053751427" duration="14379000" />
       <workItem from="1656100711051" duration="911000" />
       <workItem from="1656263432829" duration="845000" />
-      <workItem from="1658174061341" duration="6920000" />
+      <workItem from="1658174061341" duration="7525000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -537,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658179596560</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="fix: tests structure">
+      <created>1658181065935</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1658181065935</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Candidate attributes test created and some fixes" />
     <MESSAGE value="big fixes" />
     <MESSAGE value="fixes" />
     <MESSAGE value="created some basic logic for finding duplicates with using just one parameter and some javadoc for it" />
@@ -585,7 +581,8 @@
     <MESSAGE value="little part of sonar fixes (2)" />
     <MESSAGE value="test fix" />
     <MESSAGE value="fix: sonar vulnerability" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: sonar vulnerability" />
+    <MESSAGE value="fix: tests structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: tests structure" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

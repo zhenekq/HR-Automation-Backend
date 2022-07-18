@@ -39,7 +39,7 @@ public class CandidateControllerTest {
     private final AttributeTypesController attributeTypesController;
     private final CandidateAttributeController candidateAttributeController;
     private final H2Database h2Database = H2Database.getInstance();
-    private List<Candidate> dbCandidates = new ArrayList<>();
+    private List<CandidateDto> dbCandidates = new ArrayList<>();
     private final EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter;
     static int a = 0;
 
@@ -55,13 +55,14 @@ public class CandidateControllerTest {
     @BeforeEach
     void init() {
         if(a == 0) {
-            this.dbCandidates = h2Database.initializeCandidates();
+            this.dbCandidates = converter.convertToListEntityDto(h2Database.initializeCandidates());
             List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(attributeTypesController::create);
-            h2Database.initializeCandidates().forEach(controller::create);
+            List<CandidateDto> candidateDto = converter.convertToListEntityDto(h2Database.initializeCandidates());
+            candidateDto.forEach(controller::create);
             a++;
         }
-        this.dbCandidates = h2Database.initializeCandidates();
+        this.dbCandidates = converter.convertToListEntityDto(h2Database.initializeCandidates());
     }
 
     @Test
@@ -78,7 +79,7 @@ public class CandidateControllerTest {
     void assertPaginatedCandidates_WithFilterDto_Equals() {
         FilterDto filterDto = new FilterDto(1, 3);
         List<CandidateDto> actualCandidates = controller.getAll(filterDto);
-        List<CandidateDto> expectedCandidates = converter.convertToListEntityDto(dbCandidates.subList(0, 3));
+        List<CandidateDto> expectedCandidates = dbCandidates.subList(0, 3);
         assertEquals(actualCandidates.size(), expectedCandidates.size());
     }
 
@@ -105,7 +106,9 @@ public class CandidateControllerTest {
     @DisplayName("Check is created candidate not null")
     void checkIsCandidateCreatedInDatabase_NotNull() {
         String identifierRandom = RandomString.make();
-        CandidateDto actualCandidate = controller.create(new Candidate(identifierRandom, new Timestamp(RandomUtils.nextLong()), identifierRandom));
+        CandidateDto actualCandidate = controller.create(
+                converter.convertToEntityDto(new Candidate(identifierRandom, new Timestamp(RandomUtils.nextLong()), identifierRandom))
+        );
         assertNotNull(actualCandidate);
     }
 
@@ -115,7 +118,7 @@ public class CandidateControllerTest {
         Candidate existsCandidate = h2Database.getCandidateWithRandomValues();
         existsCandidate.setId(null);
         assertThrows(IllegalArgumentException.class,
-                () -> controller.create(existsCandidate),
+                () -> controller.create(converter.convertToEntityDto(existsCandidate)),
                 "Fields cannot be nullable");
     }
 
@@ -123,7 +126,7 @@ public class CandidateControllerTest {
     @DisplayName("Check create keywords to candidate, without exists keywords")
     void addKeywordsToCandidateWithoutKeywords() {
         List<String> expectedKeywords = List.of("javaBackend", "pythonBackend", "react");
-        Candidate expectedCandidate = dbCandidates.get(0);
+        CandidateDto expectedCandidate = dbCandidates.get(0);
         FilterDto filterDto = new FilterDto();
         filterDto.setKeyword(expectedKeywords);
         List<String> actualKeywords =  controller.addKeywords(expectedCandidate.getId(), filterDto)
@@ -137,7 +140,7 @@ public class CandidateControllerTest {
     @DisplayName("Check are connected keyboards will be ignored when connected away, with new")
     void addKeywordsToCandidateWithKeywords(){
         List<String> addedKeywords = new ArrayList<>(List.of("java", "react"));
-        Candidate expectedCandidate = dbCandidates.get(2);
+        CandidateDto expectedCandidate = dbCandidates.get(2);
         FilterDto filterDto = new FilterDto();
         filterDto.setKeyword(addedKeywords);
         controller.addKeywords(expectedCandidate.getId(), filterDto);

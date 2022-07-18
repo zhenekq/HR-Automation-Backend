@@ -85,8 +85,8 @@ public class CandidateController {
      */
     @ApiOperation("Create new candidate")
     @PostMapping
-    public CandidateDto create(@RequestBody Candidate candidate) {
-        Candidate createdCandidate = candidateService.create(candidate);
+    public CandidateDto create(@RequestBody CandidateDto candidate) {
+        Candidate createdCandidate = candidateService.create(converter.convertToEntity(candidate));
         return converter.convertToEntityDto(createdCandidate);
     }
 
