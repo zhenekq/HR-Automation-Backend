@@ -2,6 +2,7 @@ by\mifort\automation\hr\dev\service\CommunicationHistoryService.class
 by\mifort\automation\hr\dev\util\converter\impl\CandidateConverter.class
 by\mifort\automation\hr\dev\util\differences\AssertDifferencesUpdates.class
 by\mifort\automation\hr\dev\util\validator\impl\CandidateUpdateValidator.class
+by\mifort\automation\hr\dev\controller\HealthController.class
 by\mifort\automation\hr\dev\dto\CommunicationHistoryDto.class
 by\mifort\automation\hr\dev\util\converter\EntityConverter.class
 by\mifort\automation\hr\dev\util\validator\impl\CommunicationHistoryValidator.class

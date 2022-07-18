@@ -67,3 +67,5 @@ databaseChangeLog:
       file: db/changelog/changeset/change-column-names-att-types.yaml
   - include:
       file: db/changelog/changeset/i-dont-know-how-to-name.yaml
+  - include:
+      file: db/changelog/changeset/add-column-to-attribute-types-ismultivalued.yaml

@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-column-to-attribute-types-ismultivalued
+      author: yauheni_vozny
+      changes:
+        - addColumn:
+            tableName: attributetypes
+            columns:
+              - column:
+                  name: ismultivalued
+                  type: boolean
+                  defaultValue: 'false'

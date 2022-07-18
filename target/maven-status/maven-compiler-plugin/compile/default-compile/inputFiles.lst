@@ -2,6 +2,7 @@ D:\Mifort\HR-Automation-Backend\src\main\java\by\mifort\automation\hr\dev\servic
 D:\Mifort\HR-Automation-Backend\src\main\java\by\mifort\automation\hr\dev\service\duplicates\DuplicatesStrategy.java
 D:\Mifort\HR-Automation-Backend\src\main\java\by\mifort\automation\hr\dev\repository\CandidateUpdateRepository.java
 D:\Mifort\HR-Automation-Backend\src\main\java\by\mifort\automation\hr\dev\service\duplicates\strategies\DobFirstnameLastnameCityStrategy.java
+D:\Mifort\HR-Automation-Backend\src\main\java\by\mifort\automation\hr\dev\controller\HealthController.java
 D:\Mifort\HR-Automation-Backend\src\main\java\by\mifort\automation\hr\dev\entity\CommunicationHistory.java
 D:\Mifort\HR-Automation-Backend\src\main\java\by\mifort\automation\hr\dev\service\KeywordService.java
 D:\Mifort\HR-Automation-Backend\src\main\java\by\mifort\automation\hr\dev\util\validator\impl\CommunicationHistoryValidator.java
