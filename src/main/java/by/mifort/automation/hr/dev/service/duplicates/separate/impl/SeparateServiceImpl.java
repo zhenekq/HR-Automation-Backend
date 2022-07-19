@@ -10,6 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Service
+@SuppressWarnings("all")
 public class SeparateServiceImpl implements SeparateService {
 
     @Override
