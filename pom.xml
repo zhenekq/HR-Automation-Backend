@@ -18,6 +18,8 @@
         <sonar.organization>hr-automation-app</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.tests>src/test</sonar.tests>
+        <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
     </properties>
     <dependencies>
         <dependency>
