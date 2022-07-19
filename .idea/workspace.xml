@@ -5,26 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/DuplicatesStrategyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/DuplicatesStrategyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/comparator/FirstnameLastnameCityCompanyComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/comparator/FirstnameLastnameCityCompanyComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateMergeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/CandidateMergeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/CandidateMergeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/CandidateMergeConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/CandidateUpdatesConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/converter/impl/CandidateUpdatesConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/differences/impl/AsserDifferencesCandidateListAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/util/differences/impl/AsserDifferencesCandidateListAttributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/db/H2Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/db/H2Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/DuplicatesStrategyUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/DuplicatesStrategyUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/comparator/FirstnameLastnameCityCompanyComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/comparator/FirstnameLastnameCityCompanyComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateAttributesServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateMergeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/impl/CandidateMergeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/CandidateMergeConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/CandidateMergeConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/CandidateUpdatesConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/impl/CandidateUpdatesConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/differences/impl/AsserDifferencesCandidateListAttributes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/differences/impl/AsserDifferencesCandidateListAttributes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/AttributeTypesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/AttributeTypesDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateAttributesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateAttributesDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateMergeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateMergeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateUpdateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateUpdateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/ChangeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/ChangeSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CommunicationHistoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CommunicationHistoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/FilterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/FilterDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +260,7 @@
       <workItem from="1656100711051" duration="911000" />
       <workItem from="1656263432829" duration="845000" />
       <workItem from="1658174061341" duration="10909000" />
-      <workItem from="1658258852151" duration="1329000" />
+      <workItem from="1658258852151" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -560,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658181695840</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="fix: some sonar fixes">
+      <created>1658260266047</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1658260266047</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="fixes" />
     <MESSAGE value="created some basic logic for finding duplicates with using just one parameter and some javadoc for it" />
     <MESSAGE value="created attributetypes database structure with attributes" />
     <MESSAGE value="fixed adding candidate attributes with many parameters" />
@@ -608,7 +603,8 @@
     <MESSAGE value="fix: sonar vulnerability" />
     <MESSAGE value="fix: tests structure" />
     <MESSAGE value="fix: candidate dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: candidate dto" />
+    <MESSAGE value="fix: some sonar fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: some sonar fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
