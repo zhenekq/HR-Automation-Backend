@@ -2,7 +2,7 @@ package by.mifort.automation.hr.dev.service.duplicates;
 
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -16,7 +16,7 @@ import java.util.Set;
 @Component
 public class DuplicatesStrategyFactory {
 
-    private final Map<DuplicatesStrategyName, DuplicatesStrategy> duplicatesStrategies = new HashMap<>();
+    private final Map<DuplicatesStrategyName, DuplicatesStrategy> duplicatesStrategies = new EnumMap<>(DuplicatesStrategyName.class);
 
     public DuplicatesStrategyFactory(Set<DuplicatesStrategy> duplicatesStrategies){
         fillStrategies(duplicatesStrategies);
