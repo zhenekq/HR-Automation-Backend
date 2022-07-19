@@ -21,8 +21,10 @@ public class SeparateServiceImpl implements SeparateService {
             for(int j=0;j<attributes.size();j++){
                 if(comparator.compare(attributes.get(i), attributes.get(j)) == 0 && i != j){
                     logCandidates.add(attributes.get(j).getCandidate());
-                    attributes.remove(j);
-                    j--;
+                    if (!attributes.isEmpty()) {
+                        attributes.remove(j);
+                        j--;
+                    }
                 }
             }
             if(logCandidates.size() > 1) {
