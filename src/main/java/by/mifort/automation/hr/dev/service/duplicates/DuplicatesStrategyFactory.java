@@ -16,7 +16,7 @@ import java.util.Set;
 @Component
 public class DuplicatesStrategyFactory {
 
-    private Map<DuplicatesStrategyName, DuplicatesStrategy> duplicatesStrategies;
+    private final Map<DuplicatesStrategyName, DuplicatesStrategy> duplicatesStrategies = new HashMap<>();
 
     public DuplicatesStrategyFactory(Set<DuplicatesStrategy> duplicatesStrategies){
         fillStrategies(duplicatesStrategies);
@@ -28,7 +28,6 @@ public class DuplicatesStrategyFactory {
     }
 
     private void fillStrategies(Set<DuplicatesStrategy> strategies){
-        duplicatesStrategies = new HashMap<>();
         strategies.forEach(
                 strategy -> duplicatesStrategies.put(strategy.getStrategyName(), strategy)
         );
