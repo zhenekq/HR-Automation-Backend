@@ -34,7 +34,7 @@ public class CandidateAttributesConverter implements EntityConverter<CandidateAt
                 default -> dto.setName(firstUpperCase(attributes.getAttributeTypes().getName()));
             }
         }
-        dto.setArchived(attributes.getIsArchived());
+        dto.setIsArchived(attributes.getIsArchived());
         return dto;
     }
 

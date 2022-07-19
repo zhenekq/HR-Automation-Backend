@@ -100,7 +100,7 @@ class AttributeTypesControllerTest {
         expectedAttribute.setName(RandomString.make());
         expectedAttribute.setBasicType(RandomString.make());
         expectedAttribute.setValidation(RandomString.make());
-        expectedAttribute.setIdentifier(RandomUtils.nextBoolean());
+        expectedAttribute.setIsIdentifier(RandomUtils.nextBoolean());
         AttributeTypesDto actualAttribute = controller.updateByAttributeId(1, expectedAttribute);
 
         assertEquals(expectedAttribute.getId(), actualAttribute.getId());

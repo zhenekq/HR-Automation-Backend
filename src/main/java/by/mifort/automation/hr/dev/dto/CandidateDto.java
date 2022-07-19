@@ -31,4 +31,10 @@ public class CandidateDto {
     private List<CommunicationHistory> communicationHistory = new ArrayList<>();
     private List<CandidateAttributes> candidateAttributes = new ArrayList<>();
     private List<CandidateMerge> mergeCandidates = new ArrayList<>();
+
+    public CandidateDto(String id, Timestamp lastContact, String status) {
+        this.id = id;
+        this.lastContact = lastContact;
+        this.status = status;
+    }
 }

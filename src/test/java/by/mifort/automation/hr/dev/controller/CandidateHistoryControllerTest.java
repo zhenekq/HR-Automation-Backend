@@ -193,7 +193,7 @@ class CandidateHistoryControllerTest {
         expectedHistory.setArchived(Boolean.TRUE);
         String candidateId = "yauheni_vozny";
         CommunicationHistoryDto actualHistory = historyController.archiveHistoryWithCandidate(candidateId, expectedHistory.getId());
-        assertEquals(expectedHistory.getArchived(), actualHistory.getArchived());
+        assertEquals(expectedHistory.getArchived(), actualHistory.getIsArchived());
     }
 
     @Test

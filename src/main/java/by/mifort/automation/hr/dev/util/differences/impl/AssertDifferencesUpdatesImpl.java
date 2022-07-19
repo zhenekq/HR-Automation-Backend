@@ -27,8 +27,8 @@ public class AssertDifferencesUpdatesImpl implements AssertDifferencesUpdates {
 
     @Override
     public AttributeTypes assertAttributeTypesAndDto(AttributeTypes types, AttributeTypesDto dto) {
-        if (dto.getIdentifier() != null) {
-            types.setIdentifier(dto.getIdentifier());
+        if (dto.getIsIdentifier() != null) {
+            types.setIdentifier(dto.getIsIdentifier());
         }
         if (dto.getBasicType() != null) {
             types.setBasicType(dto.getBasicType());

@@ -21,7 +21,7 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
         AttributeTypesDto dto = new AttributeTypesDto();
         dto.setId(attributeTypes.getId());
         dto.setBasicType(attributeTypes.getBasicType());
-        dto.setIdentifier(attributeTypes.getIdentifier());
+        dto.setIsIdentifier(attributeTypes.getIdentifier());
         dto.setName(attributeTypes.getName());
         dto.setLabel(firstUpperCase(attributeTypes.getName()));
         switch (attributeTypes.getName()){
@@ -56,7 +56,7 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
         AttributeTypes types = new AttributeTypes();
         types.setId(dto.getId());
         types.setBasicType(dto.getBasicType());
-        types.setIdentifier(dto.getIdentifier());
+        types.setIdentifier(dto.getIsIdentifier());
         types.setName(dto.getName());
         types.setValidation(dto.getValidation());
         return types;

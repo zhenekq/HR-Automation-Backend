@@ -17,7 +17,7 @@ public class CommunicationHistoryConverter implements EntityConverter<Communicat
         dto.setComment(history.getComment());
         dto.setCreateDate(history.getCreateDate());
         dto.setUpdateDate(history.getUpdateDate());
-        dto.setArchived(history.getArchived());
+        dto.setIsArchived(history.getArchived());
 
         return dto;
     }
@@ -36,7 +36,7 @@ public class CommunicationHistoryConverter implements EntityConverter<Communicat
         history.setComment(historyDto.getComment());
         history.setCreateDate(historyDto.getCreateDate());
         history.setUpdateDate(historyDto.getUpdateDate());
-        history.setArchived(historyDto.getArchived());
+        history.setArchived(historyDto.getIsArchived());
 
         return history;
     }
