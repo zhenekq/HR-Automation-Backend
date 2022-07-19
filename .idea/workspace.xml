@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/dto/CandidateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/config/CorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/config/CorsFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/dto/CandidateDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/dto/CandidateDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/EntityConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/converter/EntityConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/validator/EntityValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/util/validator/EntityValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.class" afterDir="false" />
-    </list>
+    <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -267,21 +254,7 @@
       <workItem from="1656100711051" duration="911000" />
       <workItem from="1656263432829" duration="845000" />
       <workItem from="1658174061341" duration="10909000" />
-      <workItem from="1658258852151" duration="8505000" />
-    </task>
-    <task id="LOCAL-00005" summary="Attribute types tests completed and some fixes">
-      <created>1646212377056</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1646212377056</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Candidate attributes test created and some fixes">
-      <created>1646220465508</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1646220465508</updated>
+      <workItem from="1658258852151" duration="8905000" />
     </task>
     <task id="LOCAL-00007" summary="big fixes">
       <created>1647254299951</created>
@@ -612,7 +585,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658266476172</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="fix: sonar exceptions(maybe) + lazy init">
+      <created>1658267985042</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1658267985042</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fix: sonar test exceptions + StringBuilder">
+      <created>1658268216043</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1658268216043</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,8 +622,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Fixed isArchived column from AttributeTypes to CandidateAttributes" />
-    <MESSAGE value="Little validation for create user" />
     <MESSAGE value="dont care" />
     <MESSAGE value="check is CI working (2nd try)" />
     <MESSAGE value="v 1.12" />
@@ -660,7 +645,9 @@
     <MESSAGE value="fix: try to turn on test coverage in sonar" />
     <MESSAGE value="fix: make environment access endpoint" />
     <MESSAGE value="fix: delete print" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: delete print" />
+    <MESSAGE value="fix: sonar exceptions(maybe) + lazy init" />
+    <MESSAGE value="fix: sonar test exceptions + StringBuilder" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: sonar test exceptions + StringBuilder" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
