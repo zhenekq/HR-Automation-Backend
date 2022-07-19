@@ -51,12 +51,13 @@ public class CandidateMergeServiceImpl implements CandidateMergeService {
 
     @Override
     public CandidateMerge create(CandidateMerge candidateMerge) {
-        Candidate firstCandidate = candidateRepository
-                .findById(candidateMerge.getCandidate1().getId())
-                .orElseThrow(() -> new EntityNotFoundException("First candidate do not exists!"));
-        Candidate secondCandidate = candidateRepository
-                .findById(candidateMerge.getCandidate2().getId())
-                .orElseThrow(() -> new EntityNotFoundException("Second candidate do not exists!"));
+        if (candidateRepository.findById(candidateMerge.getCandidate1().getId()).isEmpty()) {
+            throw new EntityNotFoundException("First candidate do not exists!");
+        }
+
+        if (candidateRepository.findById(candidateMerge.getCandidate2().getId()).isEmpty()) {
+            throw new EntityNotFoundException("Second candidate do not exists!");
+        }
         return repository.save(candidateMerge);
     }
 

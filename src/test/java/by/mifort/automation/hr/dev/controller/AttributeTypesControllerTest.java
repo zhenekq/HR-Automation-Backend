@@ -68,6 +68,7 @@ class AttributeTypesControllerTest {
     @DisplayName("Create attribute type with incorrect data")
     void checkAttributeTypeCreate_IncorrectData() {
         AttributeTypes createAttribute = h2Database.getAttributeTypeWithRandomValues();
+        createAttribute.setId(200);
         createAttribute.setName(null);
         assertThrows(NullPointerException.class,
                 () -> controller.create(converter.convertToEntityDto(createAttribute)),

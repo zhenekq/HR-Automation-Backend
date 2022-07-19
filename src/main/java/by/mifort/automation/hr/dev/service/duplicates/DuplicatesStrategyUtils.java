@@ -13,10 +13,13 @@ import java.util.List;
  */
 public class DuplicatesStrategyUtils {
 
-    public static String setValues(List<CandidateAttributes> attributes, String type){
+    private DuplicatesStrategyUtils() {
+    }
+
+    public static String setValues(List<CandidateAttributes> attributes, String type) {
         String res = "";
-        for(int i=0;i<attributes.size();i++){
-            if(attributes.get(i).getAttributeTypes().getName().equals(type)){
+        for (int i = 0; i < attributes.size(); i++) {
+            if (attributes.get(i).getAttributeTypes().getName().equals(type)) {
                 res = attributes.get(i).getValue();
                 break;
             }

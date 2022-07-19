@@ -5,6 +5,7 @@ import by.mifort.automation.hr.dev.entity.CandidateMerge;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,6 +40,6 @@ public class CandidateMergeConverter implements EntityConverter<CandidateMerge, 
 
     @Override
     public List<CandidateMerge> convertToListEntity(List<CandidateMergeDto> candidateMergeDtos) {
-        return null;
+        return Collections.emptyList();
     }
 }

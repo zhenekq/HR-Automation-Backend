@@ -49,7 +49,6 @@ public class    AsserDifferencesCandidateListAttributes {
     }
 
     public static CandidateUpdate getUpdates(List<CandidateAttributes> oldAttr, List<CandidateAttributes> newAttr){
-        List<CandidateAttributes> result = new ArrayList<>();
         List<ChangeSet> changeSets = new ArrayList<>();
         CandidateUpdate update = new CandidateUpdate();
         for(int i=0;i<oldAttr.size();i++){

@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -79,7 +80,6 @@ public class CandidateAttributesServiceImpl implements CandidateAttributesServic
 
     @Override
     public List<CandidateAttributes> archiveByCandidateId(String candidateId, List<Integer> attributesId) {
-        List<CandidateAttributes> attributes = getByCandidateId(candidateId);
-        return null;
+        return Collections.emptyList();
     }
 }

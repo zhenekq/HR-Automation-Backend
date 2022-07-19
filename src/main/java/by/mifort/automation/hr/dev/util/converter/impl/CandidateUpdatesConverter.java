@@ -5,6 +5,7 @@ import by.mifort.automation.hr.dev.entity.CandidateUpdate;
 import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,6 +37,6 @@ public class CandidateUpdatesConverter implements EntityConverter<CandidateUpdat
 
     @Override
     public List<CandidateUpdate> convertToListEntity(List<CandidateUpdateDto> candidateUpdateDtos) {
-        return null;
+        return Collections.emptyList();
     }
 }
