@@ -31,8 +31,7 @@ public class CandidateUpdatesConverter implements EntityConverter<CandidateUpdat
 
     @Override
     public CandidateUpdate convertToEntity(CandidateUpdateDto dto) {
-        CandidateUpdate update = new CandidateUpdate();
-        return update;
+        return new CandidateUpdate();
     }
 
     @Override
