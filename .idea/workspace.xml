@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/separate/impl/SeparateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/separate/impl/SeparateServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -253,14 +253,7 @@
       <workItem from="1656100711051" duration="911000" />
       <workItem from="1656263432829" duration="845000" />
       <workItem from="1658174061341" duration="10909000" />
-      <workItem from="1658258852151" duration="5978000" />
-    </task>
-    <task id="LOCAL-00001" summary="test commit">
-      <created>1646049664216</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1646049664216</updated>
+      <workItem from="1658258852151" duration="6294000" />
     </task>
     <task id="LOCAL-00002" summary="test commit123">
       <created>1646050244090</created>
@@ -598,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658263889135</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fix: instantly return object">
+      <created>1658265423868</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1658265423869</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
