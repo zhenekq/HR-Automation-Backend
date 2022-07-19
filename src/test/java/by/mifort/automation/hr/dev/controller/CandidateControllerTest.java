@@ -117,8 +117,9 @@ class CandidateControllerTest {
     void checkIsCandidateCreatedWithExistsId() {
         Candidate existsCandidate = h2Database.getCandidateWithRandomValues();
         existsCandidate.setId(null);
+        CandidateDto wrongCandidate = converter.convertToEntityDto(existsCandidate);
         assertThrows(IllegalArgumentException.class,
-                () -> controller.create(converter.convertToEntityDto(existsCandidate)),
+                () -> controller.create(wrongCandidate),
                 "Fields cannot be nullable");
     }
 

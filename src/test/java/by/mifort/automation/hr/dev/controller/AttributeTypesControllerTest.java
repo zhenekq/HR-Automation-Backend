@@ -70,8 +70,9 @@ class AttributeTypesControllerTest {
         AttributeTypes createAttribute = h2Database.getAttributeTypeWithRandomValues();
         createAttribute.setId(200);
         createAttribute.setName(null);
+        AttributeTypesDto wrongAttribute = converter.convertToEntityDto(createAttribute);
         assertThrows(NullPointerException.class,
-                () -> controller.create(converter.convertToEntityDto(createAttribute)),
+                () -> controller.create(wrongAttribute),
                 "Parameters cannot be nullable!");
     }
 

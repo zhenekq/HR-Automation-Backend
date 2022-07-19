@@ -39,7 +39,7 @@ public class CandidateDto {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("CandidateDto{");
+        final StringBuilder sb = new StringBuilder("CandidateDto{");
         sb.append("id='").append(id).append('\'');
         sb.append(", lastContact=").append(lastContact);
         sb.append(", status='").append(status).append('\'');
