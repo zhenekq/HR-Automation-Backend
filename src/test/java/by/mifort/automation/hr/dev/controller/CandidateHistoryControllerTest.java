@@ -86,8 +86,10 @@ class CandidateHistoryControllerTest {
     @Test
     @DisplayName("Check communication history of not founded candidate")
     void checkWhenCandidateDoNotExistsCommunicationHistory_ArchivedFalse(){
+        String randomId = RandomString.make();
+        FilterDto emptyFilter = new FilterDto();
         assertThrows(EntityNotFoundException.class,
-                () -> historyController.getByCandidateId(RandomString.make(), new FilterDto()),
+                () -> historyController.getByCandidateId(randomId, emptyFilter),
                 "Entity not found!");
     }
 
@@ -131,8 +133,9 @@ class CandidateHistoryControllerTest {
         String randomCandidate = RandomString.make();
         CommunicationHistory createHistory = new CommunicationHistory(new Timestamp(RandomUtils.nextLong()),
                 new Timestamp(RandomUtils.nextLong()), RandomString.make(), Boolean.FALSE, new Candidate(randomCandidate));
+        CommunicationHistoryDto errorHistory = converter.convertToEntityDto(createHistory);
         assertThrows(EntityNotFoundException.class,
-                () -> historyController.createByCandidateId(randomCandidate, converter.convertToEntityDto(createHistory)),
+                () -> historyController.createByCandidateId(randomCandidate, errorHistory),
                 "Candidate do not exists!");
     }
 
@@ -201,8 +204,9 @@ class CandidateHistoryControllerTest {
     void checkArchiveCommunicationHistoryFake_CandidateExists(){
         CommunicationHistory expectedHistory = histories.get(1);
         String candidateId = "yauheni_vozny";
+        Integer historyId = expectedHistory.getId();
         assertThrows(EntityNotFoundException.class,
-                () -> historyController.archiveHistoryWithCandidate(candidateId, expectedHistory.getId()),
+                () -> historyController.archiveHistoryWithCandidate(candidateId, historyId),
                 "Communication history not found!");
     }
 
@@ -211,8 +215,9 @@ class CandidateHistoryControllerTest {
     void checkArchiveCommunicationHistoryFake_CandidateFake(){
         CommunicationHistory expectedHistory = histories.get(1);
         String candidateId = RandomString.make();
+        Integer historyId = expectedHistory.getId();
         assertThrows(EntityNotFoundException.class,
-                () -> historyController.archiveHistoryWithCandidate(candidateId, expectedHistory.getId()),
+                () -> historyController.archiveHistoryWithCandidate(candidateId, historyId),
                 "Communication history not found!");
     }
 }

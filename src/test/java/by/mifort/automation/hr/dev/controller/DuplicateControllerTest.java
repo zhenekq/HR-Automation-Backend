@@ -97,7 +97,6 @@ class DuplicateControllerTest {
     void findDuplicatesByPassportFirstnameLastnameDateCity(){
         String strategy = "firstname_lastname_city_dob_passport";
         List<List<CandidateDto>> actualCandidates = duplicateController.getByAttributes(strategy);
-        System.out.println(actualCandidates);
         List<CandidateDto> candidateFirst = List.of(
                 converter.convertToEntityDto(h2Database.initializeCandidates().get(0)),
                 converter.convertToEntityDto(h2Database.initializeCandidates().get(6))

@@ -21,7 +21,6 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString
 public class CandidateDto {
     private String id;
     private Timestamp lastContact;
@@ -36,5 +35,15 @@ public class CandidateDto {
         this.id = id;
         this.lastContact = lastContact;
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("CandidateDto{");
+        sb.append("id='").append(id).append('\'');
+        sb.append(", lastContact=").append(lastContact);
+        sb.append(", status='").append(status).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
