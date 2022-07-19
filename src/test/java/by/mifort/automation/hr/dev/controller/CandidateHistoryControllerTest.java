@@ -95,7 +95,7 @@ class CandidateHistoryControllerTest {
     @DisplayName("Check empty history of exists candidate")
     void checkWhenCandidateExistsCommunicationHistoryDoNotExists_ArchivedFalse(){
         List<CommunicationHistoryDto> histories = historyController.getByCandidateId("empty_candidate", new FilterDto());
-        assertEquals(histories, Collections.emptyList());
+        assertEquals(Collections.emptyList(), histories);
     }
 
     @Test

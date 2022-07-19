@@ -9,13 +9,13 @@ import java.util.List;
  * @version 1.0
  */
 
-public interface EntityConverter<Entity, EntityDto> {
+public interface EntityConverter<T, Y> {
 
-    EntityDto convertToEntityDto(Entity entity);
+    Y convertToEntityDto(T entity);
 
-    List<EntityDto> convertToListEntityDto(List<Entity> entities);
+    List<Y> convertToListEntityDto(List<T> entities);
 
-    Entity convertToEntity(EntityDto entityDto);
+    T convertToEntity(Y entityDto);
 
-    List<Entity> convertToListEntity(List<EntityDto> entityDtoList);
+    List<T> convertToListEntity(List<Y> entityDtoList);
 }

@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/DuplicatesStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/duplicates/DuplicatesStrategyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/dto/ChangeSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/dto/ChangeSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/DuplicatesStrategyFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/DuplicatesStrategyFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/KeywordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/service/impl/KeywordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateAttributeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateAttributeControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/CandidateHistoryControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/DuplicateControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/entity/CandidateUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/entity/CandidateUpdate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/entity/Keyword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/entity/Keyword.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +259,7 @@
       <workItem from="1656100711051" duration="911000" />
       <workItem from="1656263432829" duration="845000" />
       <workItem from="1658174061341" duration="10909000" />
-      <workItem from="1658258852151" duration="3782000" />
+      <workItem from="1658258852151" duration="4736000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1646049664216</created>
@@ -581,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658262287626</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fix: enum map">
+      <created>1658262892006</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1658262892006</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +613,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="fixed return list of duplicates" />
     <MESSAGE value="Create functionality to find by: &#10;    1) Firstname, Lastname, City, Date of birth&#10;    2) Firstname, Lastname, City, Company" />
     <MESSAGE value="Added functionality + created database for testing + fixed test for attributes" />
     <MESSAGE value="Fixed tests for candidateAttributes" />
@@ -629,7 +637,8 @@
     <MESSAGE value="fix: dto lombok" />
     <MESSAGE value="fix: changeset equals/hashcode" />
     <MESSAGE value="fix: test lombok fixes in entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: test lombok fixes in entities" />
+    <MESSAGE value="fix: enum map" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: enum map" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

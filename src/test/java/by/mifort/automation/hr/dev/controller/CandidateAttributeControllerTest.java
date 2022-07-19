@@ -118,7 +118,7 @@ class CandidateAttributeControllerTest {
     void checkCandidateAttributesById_CandidateExists_AttributesNot(){
         String candidateId = "empty_candidate";
         List<CandidateAttributesDto> actualAttributes = controller.getByCandidateId(candidateId);
-        assertEquals(actualAttributes.get(0).getValue(), "");
+        assertEquals("", actualAttributes.get(0).getValue());
     }
 
     @Test

@@ -43,7 +43,7 @@ public class KeywordServiceImpl implements KeywordService {
                 distinctKeywords.add(keyword);
             }
         }
-        distinctKeywords.forEach((el) -> el.setCandidate(new Candidate(id)));
+        distinctKeywords.forEach(el -> el.setCandidate(new Candidate(id)));
         repository.saveAll(distinctKeywords);
         return distinctKeywords;
     }
