@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/config/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/config/CorsFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/separate/SeparateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/service/duplicates/separate/SeparateService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/entity/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/entity/Candidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/entity/Candidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/mifort/automation/hr/dev/entity/Candidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +111,7 @@
       <recent name="by.mifort.automation.hr.dev.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DuplicateControllerTest">
+  <component name="RunManager" selected="Spring Boot.DevApplication (1)">
     <configuration name="AttributeTypesControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HR-Automation-Backend" />
       <extension name="coverage">
@@ -258,14 +260,7 @@
       <workItem from="1656100711051" duration="911000" />
       <workItem from="1656263432829" duration="845000" />
       <workItem from="1658174061341" duration="10909000" />
-      <workItem from="1658258852151" duration="13490000" />
-    </task>
-    <task id="LOCAL-00012" summary="fixed return list of duplicates">
-      <created>1650457213099</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1650457213099</updated>
+      <workItem from="1658258852151" duration="17556000" />
     </task>
     <task id="LOCAL-00013" summary="Create functionality to find by: &#10;    1) Firstname, Lastname, City, Date of birth&#10;    2) Firstname, Lastname, City, Company">
       <created>1650880249800</created>
@@ -603,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658306092254</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="feat: cors policy">
+      <created>1658307378265</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1658307378265</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +628,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="fix" />
     <MESSAGE value="test static ip" />
     <MESSAGE value="check commit" />
     <MESSAGE value="little part of sonar fixes" />
@@ -651,7 +652,8 @@
     <MESSAGE value="fix: unsafe remove usage v2.0" />
     <MESSAGE value="fix: sonar turn on test coverage" />
     <MESSAGE value="feat: build stable jar for BE" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: build stable jar for BE" />
+    <MESSAGE value="feat: cors policy" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: cors policy" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

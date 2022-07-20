@@ -149,10 +149,12 @@ public class Candidate {
         this.attributes = attributes;
     }
 
+    @JsonIgnore
     public List<CandidateMerge> getMergeCandidate1() {
         return mergeCandidate1;
     }
 
+    @JsonIgnore
     public List<CandidateMerge> getMergeCandidate2() {
         return mergeCandidate2;
     }
