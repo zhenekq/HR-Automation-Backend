@@ -33,7 +33,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @TestPropertySource(locations = "classpath:application-test.properties")
-public class CandidateHistoryControllerTest {
+class CandidateHistoryControllerTest {
 
     private final CandidateHistoryController historyController;
     private final CandidateController candidateController;

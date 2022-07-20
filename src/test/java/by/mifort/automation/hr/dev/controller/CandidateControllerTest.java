@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(SpringExtension.class)
 @TestPropertySource(locations = "classpath:application-test.properties")
 @AutoConfigureTestDatabase
-public class CandidateControllerTest {
+class CandidateControllerTest {
 
     private final CandidateController controller;
     private final EntityConverter<Candidate, CandidateDto> converter;

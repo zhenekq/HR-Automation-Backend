@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @TestPropertySource(locations = "classpath:application-test.properties")
-public class AttributeTypesControllerTest {
+class AttributeTypesControllerTest {
 
     private final AttributeTypesController controller;
     private final H2Database h2Database = H2Database.getInstance();

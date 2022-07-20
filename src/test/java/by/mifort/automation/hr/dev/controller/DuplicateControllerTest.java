@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @TestPropertySource(locations = "classpath:application-test.properties")
-public class DuplicateControllerTest {
+class DuplicateControllerTest {
 
     private final DuplicateController duplicateController;
     private final CandidateController candidateController;
