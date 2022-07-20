@@ -24,6 +24,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Run code coverage
+      run: mvn jacoco:report
     - name: Cache SonarCloud packages
       uses: actions/cache@v1
       with:
