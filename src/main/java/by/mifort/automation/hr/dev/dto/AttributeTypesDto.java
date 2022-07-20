@@ -23,4 +23,5 @@ public class AttributeTypesDto {
     private String validation;
     private String label;
     private Boolean isIdentifier;
+    private Boolean isMultivalued;
 }
