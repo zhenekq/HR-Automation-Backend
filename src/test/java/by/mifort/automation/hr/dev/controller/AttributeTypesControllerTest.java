@@ -34,7 +34,7 @@ public class AttributeTypesControllerTest {
     private List<AttributeTypesDto> attributeTypes;
 
     @Autowired
-    AttributeTypesControllerTest(AttributeTypesController controller, EntityConverter<AttributeTypes, AttributeTypesDto> converter) {
+    public AttributeTypesControllerTest(AttributeTypesController controller, EntityConverter<AttributeTypes, AttributeTypesDto> converter) {
         this.controller = controller;
         this.converter = converter;
     }

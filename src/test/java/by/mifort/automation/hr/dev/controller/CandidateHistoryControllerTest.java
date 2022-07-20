@@ -36,7 +36,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CandidateHistoryControllerTest {
 
     private final CandidateHistoryController historyController;
-    private final CandidateController candidateController;
     private final AttributeTypesController attributeTypesController;
     private List<CommunicationHistory> histories = H2Database.getInstance().initializeHistories();
     private final EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter;
@@ -46,9 +45,8 @@ public class CandidateHistoryControllerTest {
     static int flag = 0;
 
     @Autowired
-    CandidateHistoryControllerTest(CandidateHistoryController historyController, CandidateController candidateController, AttributeTypesController attributeTypesController, EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter, EntityConverter<Candidate, CandidateDto> candidateConverter) {
+    CandidateHistoryControllerTest(CandidateHistoryController historyController, AttributeTypesController attributeTypesController, EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter, EntityConverter<AttributeTypes, AttributeTypesDto> attributeTypesConverter, EntityConverter<Candidate, CandidateDto> candidateConverter) {
         this.historyController = historyController;
-        this.candidateController = candidateController;
         this.attributeTypesController = attributeTypesController;
         this.converter = converter;
         this.attributeTypesConverter = attributeTypesConverter;
@@ -60,8 +58,6 @@ public class CandidateHistoryControllerTest {
         if(flag == 0) {
             List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(attributeTypesController::create);
-            List<CandidateDto> candidateDto = candidateConverter.convertToListEntityDto(H2Database.getInstance().initializeCandidates());
-            //candidateDto.forEach(candidateController::create);
             H2Database.getInstance().initializeHistories().forEach(
                     history -> historyController.createByCandidateId(history.getCandidate().getId(), converter.convertToEntityDto(history))
             );
