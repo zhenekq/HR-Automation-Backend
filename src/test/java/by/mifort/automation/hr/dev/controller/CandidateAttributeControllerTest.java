@@ -58,7 +58,7 @@ public class CandidateAttributeControllerTest {
             List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(typesController::create);
             List<CandidateDto> candidateDto = candidateConverter.convertToListEntityDto(h2Database.initializeCandidates());
-            candidateDto.forEach(candidateController::create);
+            //candidateDto.forEach(candidateController::create);
             attributesList = h2Database.initializeCandidateAttributes();
             List<CandidateAttributes> yauheni_attributes = attributesList.subList(0, 14);
             controller.createByCandidateId("yauheni_vozny", yauheni_attributes);
