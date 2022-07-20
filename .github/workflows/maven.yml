@@ -24,6 +24,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - uses: actions/upload-artifact@v3
+      with:
+        name: target
+        path: ./target
     - name: Run code coverage
       run: mvn jacoco:report
     - name: Cache SonarCloud packages
