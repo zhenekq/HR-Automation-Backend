@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b0acce3-6027-4f7c-86ff-4622fb542e45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/config/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/mifort/automation/hr/dev/config/CorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mifort-automation-api.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/by/mifort/automation/hr/dev/controller/AttributeTypesControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,8 +111,8 @@
       <recent name="by.mifort.automation.hr.dev.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DevApplication (1)">
-    <configuration name="AttributeTypesControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DuplicateControllerTest">
+    <configuration name="AttributeTypesControllerTest.checkAttributeTypeCreate_IncorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HR-Automation-Backend" />
       <extension name="coverage">
         <pattern>
@@ -118,7 +122,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="by.mifort.automation.hr.dev.controller" />
       <option name="MAIN_CLASS_NAME" value="by.mifort.automation.hr.dev.controller.AttributeTypesControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="checkAttributeTypeCreate_IncorrectData" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,20 +201,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.AttributeTypesControllerTest" />
-      <item itemvalue="JUnit.CandidateHistoryControllerTest" />
-      <item itemvalue="JUnit.DuplicateControllerTest" />
       <item itemvalue="Spring Boot.DevApplication (1)" />
       <item itemvalue="JUnit.CandidateAttributeControllerTest" />
+      <item itemvalue="JUnit.AttributeTypesControllerTest.checkAttributeTypeCreate_IncorrectData" />
       <item itemvalue="JUnit.CandidateControllerTest" />
+      <item itemvalue="JUnit.CandidateHistoryControllerTest" />
+      <item itemvalue="JUnit.DuplicateControllerTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DuplicateControllerTest" />
         <item itemvalue="JUnit.CandidateHistoryControllerTest" />
-        <item itemvalue="JUnit.CandidateAttributeControllerTest" />
-        <item itemvalue="JUnit.AttributeTypesControllerTest" />
         <item itemvalue="JUnit.CandidateControllerTest" />
+        <item itemvalue="JUnit.AttributeTypesControllerTest.checkAttributeTypeCreate_IncorrectData" />
+        <item itemvalue="JUnit.CandidateAttributeControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -256,21 +261,7 @@
       <workItem from="1656100711051" duration="911000" />
       <workItem from="1656263432829" duration="845000" />
       <workItem from="1658174061341" duration="10909000" />
-      <workItem from="1658258852151" duration="19524000" />
-    </task>
-    <task id="LOCAL-00015" summary="Fixed tests for candidateAttributes">
-      <created>1651058823479</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1651058823479</updated>
-    </task>
-    <task id="LOCAL-00016" summary="new logic of finding by one attribute">
-      <created>1651144684439</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1651144684439</updated>
+      <workItem from="1658258852151" duration="20215000" />
     </task>
     <task id="LOCAL-00017" summary="FINAL FIX TESTS">
       <created>1651495514054</created>
@@ -601,7 +592,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658346504326</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="fix: cors policy fix">
+      <created>1658346715432</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1658346715432</updated>
+    </task>
+    <task id="LOCAL-00065" summary="fix: cors policy fix">
+      <created>1658346748535</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1658346748535</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

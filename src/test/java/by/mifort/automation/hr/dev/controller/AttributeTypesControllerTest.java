@@ -69,9 +69,9 @@ class AttributeTypesControllerTest {
     void checkAttributeTypeCreate_IncorrectData() {
         AttributeTypes createAttribute = h2Database.getAttributeTypeWithRandomValues();
         createAttribute.setId(200);
-        createAttribute.setName(null);
         AttributeTypesDto wrongAttribute = converter.convertToEntityDto(createAttribute);
-        assertThrows(NullPointerException.class,
+        wrongAttribute.setName(null);
+        assertThrows(IllegalArgumentException.class,
                 () -> controller.create(wrongAttribute),
                 "Parameters cannot be nullable!");
     }
