@@ -33,7 +33,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @TestPropertySource(locations = "classpath:application-test.properties")
-class CandidateHistoryControllerTest {
+public class CandidateHistoryControllerTest {
 
     private final CandidateHistoryController historyController;
     private final CandidateController candidateController;
@@ -61,7 +61,7 @@ class CandidateHistoryControllerTest {
             List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(attributeTypesController::create);
             List<CandidateDto> candidateDto = candidateConverter.convertToListEntityDto(H2Database.getInstance().initializeCandidates());
-            candidateDto.forEach(candidateController::create);
+            //candidateDto.forEach(candidateController::create);
             H2Database.getInstance().initializeHistories().forEach(
                     history -> historyController.createByCandidateId(history.getCandidate().getId(), converter.convertToEntityDto(history))
             );

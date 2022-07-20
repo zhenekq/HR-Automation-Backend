@@ -25,9 +25,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-    @ExtendWith(SpringExtension.class)
-    @TestPropertySource(locations = "classpath:application-test.properties")
-class CandidateAttributeControllerTest {
+@ExtendWith(SpringExtension.class)
+@TestPropertySource(locations = "classpath:application-test.properties")
+public class CandidateAttributeControllerTest {
 
     private final CandidateAttributeController controller;
     private final CandidateController candidateController;

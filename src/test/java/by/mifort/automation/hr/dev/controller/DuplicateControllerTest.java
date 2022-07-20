@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @TestPropertySource(locations = "classpath:application-test.properties")
-class DuplicateControllerTest {
+public class DuplicateControllerTest {
 
     private final DuplicateController duplicateController;
     private final CandidateController candidateController;
@@ -52,7 +52,7 @@ class DuplicateControllerTest {
             List<AttributeTypesDto> types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(attributeTypesController::create);
             List<CandidateDto> candidateDto = converter.convertToListEntityDto(h2Database.initializeCandidates());
-            candidateDto.forEach(candidateController::create);
+            //candidateDto.forEach(candidateController::create);
             types = attributeTypesConverter.convertToListEntityDto(H2Database.getInstance().initializeAttributeTypes());
             types.forEach(attributeTypesController::create);
 
