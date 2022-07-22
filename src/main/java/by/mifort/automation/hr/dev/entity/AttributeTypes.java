@@ -33,6 +33,9 @@ public class AttributeTypes {
     @Column(name = "isidentifier")
     private Boolean isIdentifier;
 
+    @Column(name = "ismultivalued")
+    private Boolean isMultivalued;
+
     @OneToMany(mappedBy = "attributeTypes")
     private List<CandidateAttributes> candidateAttributes;
 
@@ -102,6 +105,13 @@ public class AttributeTypes {
         isIdentifier = identifier;
     }
 
+    public Boolean getMultivalued() {
+        return isMultivalued;
+    }
+
+    public void setMultivalued(Boolean multivalued) {
+        isMultivalued = multivalued;
+    }
 
     @JsonIgnore
     public List<CandidateAttributes> getCandidateAttributes() {
@@ -130,6 +140,7 @@ public class AttributeTypes {
         sb.append(", basicType='").append(basicType).append('\'');
         sb.append(", validation='").append(validation).append('\'');
         sb.append(", isIdentifier=").append(isIdentifier);
+        sb.append(", isMultivalued=").append(isMultivalued);
         sb.append(", candidateAttributes=").append(candidateAttributes);
         sb.append('}');
         return sb.toString();

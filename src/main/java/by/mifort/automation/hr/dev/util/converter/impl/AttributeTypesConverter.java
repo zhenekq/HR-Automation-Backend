@@ -24,6 +24,7 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
         dto.setIsIdentifier(attributeTypes.getIdentifier());
         dto.setName(attributeTypes.getName());
         dto.setLabel(firstUpperCase(attributeTypes.getName()));
+        dto.setIsMultivalued(attributeTypes.getMultivalued());
         switch (attributeTypes.getName()){
             case "date_of_birth":
                 dto.setLabel(DOB_LABEL);
@@ -59,6 +60,7 @@ public class AttributeTypesConverter implements EntityConverter<AttributeTypes, 
         types.setIdentifier(dto.getIsIdentifier());
         types.setName(dto.getName());
         types.setValidation(dto.getValidation());
+        types.setMultivalued(dto.getIsMultivalued());
         return types;
     }
 
