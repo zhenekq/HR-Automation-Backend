@@ -1,4 +1,4 @@
-package by.mifort.automation.hr.dev.dto;
+package by.mifort.automation.hr.dev.candidate;
 
 import by.mifort.automation.hr.dev.entity.*;
 import lombok.*;

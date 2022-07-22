@@ -1,5 +1,6 @@
-package by.mifort.automation.hr.dev.entity;
+package by.mifort.automation.hr.dev.candidate;
 
+import by.mifort.automation.hr.dev.entity.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.lang3.builder.EqualsBuilder;

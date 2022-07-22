@@ -1,6 +1,5 @@
-package by.mifort.automation.hr.dev.repository;
+package by.mifort.automation.hr.dev.candidate;
 
-import by.mifort.automation.hr.dev.entity.Candidate;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

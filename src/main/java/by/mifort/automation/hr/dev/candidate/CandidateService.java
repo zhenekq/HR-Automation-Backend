@@ -1,8 +1,6 @@
-package by.mifort.automation.hr.dev.service;
+package by.mifort.automation.hr.dev.candidate;
 
 import by.mifort.automation.hr.dev.dto.FilterDto;
-import by.mifort.automation.hr.dev.entity.Candidate;
-import by.mifort.automation.hr.dev.repository.CandidateRepository;
 
 import java.util.List;
 

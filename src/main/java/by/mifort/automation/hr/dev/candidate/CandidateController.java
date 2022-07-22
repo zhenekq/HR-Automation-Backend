@@ -1,21 +1,20 @@
-package by.mifort.automation.hr.dev.controller;
+package by.mifort.automation.hr.dev.candidate;
 
-import by.mifort.automation.hr.dev.dto.CandidateDto;
+import by.mifort.automation.hr.dev.candidate.request.CreateNewCandidateRequest;
 import by.mifort.automation.hr.dev.dto.FilterDto;
-import by.mifort.automation.hr.dev.entity.Candidate;
 import by.mifort.automation.hr.dev.entity.Keyword;
-import by.mifort.automation.hr.dev.service.CandidateService;
 import by.mifort.automation.hr.dev.service.KeywordService;
-import by.mifort.automation.hr.dev.service.duplicates.DuplicatesStrategyFactory;
-import by.mifort.automation.hr.dev.util.converter.EntityConverter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Controller that handles requests about candidates
@@ -26,23 +25,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/candidates")
+@Validated
 @Api("Candidate controller for searching and creating new")
 public class CandidateController {
 
     private final CandidateService candidateService;
     private final KeywordService keywordService;
-    private final EntityConverter<Candidate, CandidateDto> converter;
-    private final DuplicatesStrategyFactory factory;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public CandidateController(CandidateService candidateService, KeywordService keywordService, EntityConverter<Candidate, CandidateDto> converter, DuplicatesStrategyFactory factory) {
+    public CandidateController(CandidateService candidateService, KeywordService keywordService, ModelMapper modelMapper) {
         this.candidateService = candidateService;
         this.keywordService = keywordService;
-        this.converter = converter;
-        this.factory = factory;
+        this.modelMapper = modelMapper;
     }
-
-    //STATEGY PATTERN
 
     /**
      * GET request to receive all info about candidates
@@ -54,14 +50,12 @@ public class CandidateController {
      */
     @ApiOperation("Get paginated candidates, with amount of them on one page")
     @GetMapping
-    public List<CandidateDto> getAll(FilterDto filterDto) {
-        Integer pageNumber = filterDto.getPageNumber();
-        Integer pageSize = filterDto.getPageSize();
-        if (pageNumber == null || pageSize == null || pageNumber <= 0 || pageSize <= 0) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Parameters cannot be nullable");
-        }
+    public List<CandidateDto> getAll(@Valid FilterDto filterDto) {
         List<Candidate> candidateList = candidateService.getAll(filterDto);
-        return converter.convertToListEntityDto(candidateList);
+        return candidateList
+                .stream()
+                .map(el -> modelMapper.map(el, CandidateDto.class))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -72,22 +66,23 @@ public class CandidateController {
      */
     @ApiOperation("Get full information about user by id")
     @GetMapping("/{id}")
-    public CandidateDto getById(@PathVariable String id) {
+    public CandidateDto getById(@PathVariable @NotBlank String id) {
         Candidate candidate = candidateService.getById(id);
-        return converter.convertToEntityDto(candidate);
+        return modelMapper.map(candidate, CandidateDto.class);
     }
 
     /**
      * POST request to create candidate
      *
-     * @param candidate candidate entity body
+     * @param candidateRequest candidate entity body
      * @return Conversation of successful created candidate with id
      */
     @ApiOperation("Create new candidate")
     @PostMapping
-    public CandidateDto create(@RequestBody CandidateDto candidate) {
-        Candidate createdCandidate = candidateService.create(converter.convertToEntity(candidate));
-        return converter.convertToEntityDto(createdCandidate);
+    public CandidateDto create(@Valid @RequestBody CreateNewCandidateRequest candidateRequest) {
+        Candidate candidate = modelMapper.map(candidateRequest, Candidate.class);
+        Candidate createdCandidate = candidateService.create(candidate);
+        return modelMapper.map(createdCandidate, CandidateDto.class);
     }
 
     @ApiOperation("Connect keywords to candidate")
