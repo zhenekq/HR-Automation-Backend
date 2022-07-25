@@ -1,10 +1,10 @@
 package by.mifort.automation.hr.dev.history;
 
-import by.mifort.automation.hr.dev.candidate.dto.FilterDto;
 import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
 import by.mifort.automation.hr.dev.history.data.CommunicationHistoryDto;
 import by.mifort.automation.hr.dev.history.request.CreateNewCommunicationHistory;
 import by.mifort.automation.hr.dev.history.request.UpdateExistsCommunicationHistory;
+import by.mifort.automation.hr.dev.shared.data.FilterDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.modelmapper.ModelMapper;

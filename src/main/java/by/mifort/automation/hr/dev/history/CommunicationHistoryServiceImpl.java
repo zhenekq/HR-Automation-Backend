@@ -2,9 +2,9 @@ package by.mifort.automation.hr.dev.history;
 
 import by.mifort.automation.hr.dev.candidate.Candidate;
 import by.mifort.automation.hr.dev.candidate.CandidateRepository;
-import by.mifort.automation.hr.dev.candidate.dto.FilterDto;
 import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
 import by.mifort.automation.hr.dev.history.data.CommunicationHistoryBuilder;
+import by.mifort.automation.hr.dev.shared.data.FilterDto;
 import by.mifort.automation.hr.dev.shared.differences.AssertDifferencesUpdates;
 import by.mifort.automation.hr.dev.shared.exception.storage.CandidateExceptionResponseStorage;
 import by.mifort.automation.hr.dev.shared.exception.storage.HistoryExceptionResponseStorage;

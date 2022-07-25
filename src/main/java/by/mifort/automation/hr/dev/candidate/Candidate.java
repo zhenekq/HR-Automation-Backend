@@ -1,6 +1,10 @@
 package by.mifort.automation.hr.dev.candidate;
 
-import by.mifort.automation.hr.dev.entity.*;
+import by.mifort.automation.hr.dev.attribute.CandidateAttributes;
+import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
+import by.mifort.automation.hr.dev.keyword.Keyword;
+import by.mifort.automation.hr.dev.merge.CandidateMerge;
+import by.mifort.automation.hr.dev.update.data.CandidateUpdate;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -180,8 +184,6 @@ public class Candidate {
                 .append("keywords", keywords)
                 .append("communicationHistory", communicationHistory)
                 .append("attributes", attributes)
-                .append("mergeCandidate1", mergeCandidate1)
-                .append("mergeCandidate2", mergeCandidate2)
                 .toString();
     }
 }

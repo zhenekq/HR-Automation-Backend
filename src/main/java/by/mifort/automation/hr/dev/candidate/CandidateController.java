@@ -1,9 +1,9 @@
 package by.mifort.automation.hr.dev.candidate;
 
 import by.mifort.automation.hr.dev.candidate.request.CreateNewCandidateRequest;
-import by.mifort.automation.hr.dev.dto.FilterDto;
-import by.mifort.automation.hr.dev.entity.Keyword;
-import by.mifort.automation.hr.dev.service.KeywordService;
+import by.mifort.automation.hr.dev.keyword.Keyword;
+import by.mifort.automation.hr.dev.keyword.KeywordService;
+import by.mifort.automation.hr.dev.shared.data.FilterDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.modelmapper.ModelMapper;

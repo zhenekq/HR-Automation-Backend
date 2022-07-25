@@ -1,7 +1,7 @@
 package by.mifort.automation.hr.dev.history;
 
-import by.mifort.automation.hr.dev.candidate.dto.FilterDto;
 import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
+import by.mifort.automation.hr.dev.shared.data.FilterDto;
 
 import java.util.List;
 

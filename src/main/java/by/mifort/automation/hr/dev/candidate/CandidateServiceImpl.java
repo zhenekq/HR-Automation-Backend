@@ -1,12 +1,12 @@
 package by.mifort.automation.hr.dev.candidate;
 
-import by.mifort.automation.hr.dev.candidate.handler.exception.CandidateExceptionResponseStorage;
-import by.mifort.automation.hr.dev.candidate.handler.exception.varieties.CandidateCreateException;
-import by.mifort.automation.hr.dev.candidate.handler.exception.varieties.CandidateNotFoundException;
-import by.mifort.automation.hr.dev.dto.FilterDto;
-import by.mifort.automation.hr.dev.entity.AttributeTypes;
-import by.mifort.automation.hr.dev.entity.CandidateAttributes;
-import by.mifort.automation.hr.dev.repository.CandidateAttributesRepository;
+import by.mifort.automation.hr.dev.attribute.CandidateAttributes;
+import by.mifort.automation.hr.dev.attribute.CandidateAttributesRepository;
+import by.mifort.automation.hr.dev.shared.data.FilterDto;
+import by.mifort.automation.hr.dev.shared.exception.storage.CandidateExceptionResponseStorage;
+import by.mifort.automation.hr.dev.shared.exception.varieties.DataCreateException;
+import by.mifort.automation.hr.dev.shared.exception.varieties.DataNotFoundException;
+import by.mifort.automation.hr.dev.type.AttributeTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -49,7 +49,7 @@ public class CandidateServiceImpl implements CandidateService {
     public Candidate getById(String id) {
         return candidateRepository.findById(id)
                 .orElseThrow(
-                        () -> new CandidateNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(id), HttpStatus.NOT_FOUND)
+                        () -> new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(id), HttpStatus.NOT_FOUND)
                 );
     }
 
@@ -67,7 +67,7 @@ public class CandidateServiceImpl implements CandidateService {
             candidateAttributesRepository.saveAll(emptyList(candidate));
             return candidate;
         }
-        throw new CandidateCreateException(CandidateExceptionResponseStorage.candidateExists(candidateId), HttpStatus.CONFLICT);
+        throw new DataCreateException(CandidateExceptionResponseStorage.candidateExists(candidateId), HttpStatus.CONFLICT);
     }
 
     private List<CandidateAttributes> emptyList(Candidate candidate) {

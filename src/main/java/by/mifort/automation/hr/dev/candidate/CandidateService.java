@@ -1,6 +1,6 @@
 package by.mifort.automation.hr.dev.candidate;
 
-import by.mifort.automation.hr.dev.dto.FilterDto;
+import by.mifort.automation.hr.dev.shared.data.FilterDto;
 
 import java.util.List;
 
