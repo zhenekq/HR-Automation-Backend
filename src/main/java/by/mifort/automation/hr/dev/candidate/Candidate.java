@@ -7,6 +7,7 @@ import by.mifort.automation.hr.dev.merge.CandidateMerge;
 import by.mifort.automation.hr.dev.update.data.CandidateUpdate;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -25,6 +26,7 @@ import java.util.List;
 @Entity
 @Table(name = "people", schema = "public")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@AllArgsConstructor
 public class Candidate {
 
     @Id
