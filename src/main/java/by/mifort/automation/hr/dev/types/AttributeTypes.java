@@ -1,5 +1,6 @@
-package by.mifort.automation.hr.dev.entity;
+package by.mifort.automation.hr.dev.types;
 
+import by.mifort.automation.hr.dev.entity.CandidateAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -97,20 +98,20 @@ public class AttributeTypes {
         this.validation = validation;
     }
 
-    public Boolean getIdentifier() {
+    public Boolean getIsIdentifier() {
         return isIdentifier;
     }
 
-    public void setIdentifier(Boolean identifier) {
-        isIdentifier = identifier;
+    public void setIsIdentifier(Boolean isIdentifier) {
+        this.isIdentifier = isIdentifier;
     }
 
-    public Boolean getMultivalued() {
+    public Boolean getIsMultivalued() {
         return isMultivalued;
     }
 
-    public void setMultivalued(Boolean multivalued) {
-        isMultivalued = multivalued;
+    public void setIsMultivalued(Boolean isMultivalued) {
+        this.isMultivalued = isMultivalued;
     }
 
     @JsonIgnore

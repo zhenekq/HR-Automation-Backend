@@ -1,8 +1,4 @@
-package by.mifort.automation.hr.dev.service;
-
-import by.mifort.automation.hr.dev.dto.AttributeTypesDto;
-import by.mifort.automation.hr.dev.dto.FilterDto;
-import by.mifort.automation.hr.dev.entity.AttributeTypes;
+package by.mifort.automation.hr.dev.types;
 
 import java.util.List;
 
@@ -11,17 +7,15 @@ import java.util.List;
  *
  * @author yauheni_vozny
  * @version 1.0
- * @see by.mifort.automation.hr.dev.repository.AttributeTypesRepository
+ * @see AttributeTypesRepository
  */
 
 public interface AttributeTypesService {
 
     /**
-     * @param filterDto dto with pagination, sortTypes
-     * @return List of all exists paginated attribute types
-     * @see FilterDto
+     * @return List of all exists attribute types
      */
-    List<AttributeTypes> getAll(FilterDto filterDto);
+    List<AttributeTypes> getAll();
 
 
     /**
@@ -44,7 +38,7 @@ public interface AttributeTypesService {
      * @param id             attribute's type identifier
      * @param attributeTypes body of attribute's type
      */
-    AttributeTypes updateById(Integer id, AttributeTypesDto attributeTypes);
+    AttributeTypes updateById(Integer id, AttributeTypes attributeTypes);
 
     /**
      * Archive exists attribute's type

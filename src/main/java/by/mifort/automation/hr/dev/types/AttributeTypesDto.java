@@ -1,4 +1,4 @@
-package by.mifort.automation.hr.dev.dto;
+package by.mifort.automation.hr.dev.types;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
  *
  * @author yauheni_vozny
  * @version 1.0
- * @see by.mifort.automation.hr.dev.entity.AttributeTypes
+ * @see AttributeTypes
  */
 @Data
 @AllArgsConstructor
