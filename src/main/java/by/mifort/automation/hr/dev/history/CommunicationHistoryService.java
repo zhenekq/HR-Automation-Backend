@@ -1,8 +1,7 @@
-package by.mifort.automation.hr.dev.service;
+package by.mifort.automation.hr.dev.history;
 
-import by.mifort.automation.hr.dev.dto.CommunicationHistoryDto;
-import by.mifort.automation.hr.dev.dto.FilterDto;
-import by.mifort.automation.hr.dev.entity.CommunicationHistory;
+import by.mifort.automation.hr.dev.candidate.dto.FilterDto;
+import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
  *
  * @author yauheni_vozny
  * @version 1.0
- * @see by.mifort.automation.hr.dev.repository.CommunicationHistoryRepository
+ * @see CommunicationHistoryRepository
  */
 
 
@@ -39,7 +38,7 @@ public interface CommunicationHistoryService {
      * @param candidateId candidate's identifier
      * @param historyDto  body of history
      */
-    CommunicationHistory updateByCandidateId(String candidateId, CommunicationHistoryDto historyDto);
+    CommunicationHistory updateByCandidateId(String candidateId, CommunicationHistory historyDto);
 
     /**
      * Archive exists communication history with candidate

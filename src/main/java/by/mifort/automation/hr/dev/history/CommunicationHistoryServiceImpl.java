@@ -1,21 +1,19 @@
-package by.mifort.automation.hr.dev.service.impl;
+package by.mifort.automation.hr.dev.history;
 
-import by.mifort.automation.hr.dev.dto.CommunicationHistoryDto;
-import by.mifort.automation.hr.dev.dto.FilterDto;
-import by.mifort.automation.hr.dev.entity.Candidate;
-import by.mifort.automation.hr.dev.entity.CommunicationHistory;
-import by.mifort.automation.hr.dev.repository.CandidateRepository;
-import by.mifort.automation.hr.dev.repository.CommunicationHistoryRepository;
-import by.mifort.automation.hr.dev.service.CommunicationHistoryService;
-import by.mifort.automation.hr.dev.util.StringUtil;
-import by.mifort.automation.hr.dev.util.differences.AssertDifferencesUpdates;
+import by.mifort.automation.hr.dev.candidate.Candidate;
+import by.mifort.automation.hr.dev.candidate.CandidateRepository;
+import by.mifort.automation.hr.dev.candidate.dto.FilterDto;
+import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
+import by.mifort.automation.hr.dev.history.data.CommunicationHistoryBuilder;
+import by.mifort.automation.hr.dev.shared.differences.AssertDifferencesUpdates;
+import by.mifort.automation.hr.dev.shared.exception.storage.CandidateExceptionResponseStorage;
+import by.mifort.automation.hr.dev.shared.exception.storage.HistoryExceptionResponseStorage;
+import by.mifort.automation.hr.dev.shared.exception.varieties.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.server.ResponseStatusException;
 
-import javax.persistence.EntityNotFoundException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -38,7 +36,7 @@ public class CommunicationHistoryServiceImpl implements CommunicationHistoryServ
     @Override
     public List<CommunicationHistory> getByCandidateId(String candidateId, FilterDto filterDto) {
         if (candidateRepository.findById(candidateId).isEmpty()) {
-            throw new EntityNotFoundException(StringUtil.candidateTypeException(candidateId));
+            throw new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(candidateId), HttpStatus.NOT_FOUND);
         }
         List<CommunicationHistory> communicationHistory;
         if (filterDto.getIsArchived() == null || !filterDto.getIsArchived()) {
@@ -56,26 +54,28 @@ public class CommunicationHistoryServiceImpl implements CommunicationHistoryServ
     public CommunicationHistory createByCandidateId(String candidateId, CommunicationHistory history) {
         Optional<Candidate> optionalCandidate = candidateRepository.findById(candidateId);
         if (optionalCandidate.isEmpty()) {
-            throw new EntityNotFoundException(StringUtil.candidateTypeException(candidateId));
+            throw new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(candidateId), HttpStatus.NOT_FOUND);
         }
         Candidate candidate = optionalCandidate.get();
-        history.setCandidate(candidate);
-        history.setCreateDate(new Timestamp(new Date().getTime()));
-        history.setUpdateDate(new Timestamp(new Date().getTime()));
+        String comment = history.getComment();
+        history = new CommunicationHistoryBuilder()
+                .setComment(comment)
+                .setCandidate(candidate)
+                .setIsArchived(Boolean.FALSE)
+                .setCreateDate(new Timestamp(new Date().getTime()))
+                .setUpdateDate(new Timestamp(new Date().getTime()))
+                .createCommunicationHistory();
         repository.save(history);
         return history;
     }
 
     @Override
     @Transactional
-    public CommunicationHistory updateByCandidateId(String candidateId, CommunicationHistoryDto historyDto) {
-        if (historyDto.getId() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        }
+    public CommunicationHistory updateByCandidateId(String candidateId, CommunicationHistory history) {
         CommunicationHistory communicationHistory = repository
-                .findCommunicationHistoryByCandidateIdAndId(candidateId, historyDto.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Communication history do not exists"));
-        communicationHistory = assertDifferencesUpdates.assertCommunicationHistoryAndDto(communicationHistory, historyDto);
+                .findCommunicationHistoryByCandidateIdAndId(candidateId, history.getId())
+                .orElseThrow(() -> new DataNotFoundException(HistoryExceptionResponseStorage.historyNotFound(history.getId()), HttpStatus.NOT_FOUND));
+        communicationHistory = assertDifferencesUpdates.assertCommunicationHistoryAndDto(communicationHistory, history);
         communicationHistory.setUpdateDate(new Timestamp(new Date().getTime()));
         repository.save(communicationHistory);
         return communicationHistory;
@@ -83,10 +83,13 @@ public class CommunicationHistoryServiceImpl implements CommunicationHistoryServ
 
     @Override
     public CommunicationHistory archiveByCandidateId(String candidateId, Integer historyId) {
+        candidateRepository
+                .findById(candidateId)
+                .orElseThrow(() -> new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(candidateId), HttpStatus.NOT_FOUND));
         CommunicationHistory communicationHistory = repository
                 .findCommunicationHistoryByCandidateIdAndId(candidateId, historyId)
-                .orElseThrow(() -> new EntityNotFoundException("Communication history do not exists"));
-        communicationHistory.setArchived(Boolean.TRUE);
+                .orElseThrow(() -> new DataNotFoundException(HistoryExceptionResponseStorage.historyNotFound(historyId), HttpStatus.NOT_FOUND));
+        communicationHistory.setIsArchived(Boolean.TRUE);
         repository.save(communicationHistory);
         return communicationHistory;
     }

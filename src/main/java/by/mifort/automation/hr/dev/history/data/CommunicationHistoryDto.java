@@ -1,4 +1,4 @@
-package by.mifort.automation.hr.dev.dto;
+package by.mifort.automation.hr.dev.history.data;
 
 import lombok.*;
 
@@ -9,7 +9,7 @@ import java.sql.Timestamp;
  *
  * @author yauheni_vozny
  * @version 1.0
- * @see by.mifort.automation.hr.dev.entity.CommunicationHistory
+ * @see CommunicationHistory
  */
 
 @Data

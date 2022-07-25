@@ -1,6 +1,6 @@
-package by.mifort.automation.hr.dev.repository;
+package by.mifort.automation.hr.dev.history;
 
-import by.mifort.automation.hr.dev.entity.CommunicationHistory;
+import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

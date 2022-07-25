@@ -1,15 +1,19 @@
-package by.mifort.automation.hr.dev.controller;
+package by.mifort.automation.hr.dev.history;
 
-import by.mifort.automation.hr.dev.dto.CommunicationHistoryDto;
-import by.mifort.automation.hr.dev.dto.FilterDto;
-import by.mifort.automation.hr.dev.entity.CommunicationHistory;
-import by.mifort.automation.hr.dev.service.CommunicationHistoryService;
-import by.mifort.automation.hr.dev.util.converter.EntityConverter;
+import by.mifort.automation.hr.dev.candidate.dto.FilterDto;
+import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
+import by.mifort.automation.hr.dev.history.data.CommunicationHistoryDto;
+import by.mifort.automation.hr.dev.history.request.CreateNewCommunicationHistory;
+import by.mifort.automation.hr.dev.history.request.UpdateExistsCommunicationHistory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.modelmapper.ModelMapper;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Controller that handles requests about candidate's history communication
@@ -20,14 +24,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/candidates/{id}/history")
 @Api("Controller for manipulate with history of candidate")
-public class CandidateHistoryController {
+@Validated
+public class CommunicationHistoryController {
 
     private final CommunicationHistoryService service;
-    private final EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter;
+    private final ModelMapper modelMapper;
 
-    public CandidateHistoryController(CommunicationHistoryService service, EntityConverter<CommunicationHistory, CommunicationHistoryDto> converter) {
+    public CommunicationHistoryController(CommunicationHistoryService service, ModelMapper modelMapper) {
         this.service = service;
-        this.converter = converter;
+        this.modelMapper = modelMapper;
     }
 
     /**
@@ -42,7 +47,9 @@ public class CandidateHistoryController {
     public List<CommunicationHistoryDto> getByCandidateId(@PathVariable String id,
                                                           FilterDto filterDto) {
         List<CommunicationHistory> historyList = service.getByCandidateId(id, filterDto);
-        return converter.convertToListEntityDto(historyList);
+        return historyList.stream()
+                .map(el -> modelMapper.map(el, CommunicationHistoryDto.class))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -55,9 +62,10 @@ public class CandidateHistoryController {
     @ApiOperation("Create new history with candidate by his id")
     @PostMapping
     public CommunicationHistoryDto createByCandidateId(@PathVariable String id,
-                                                       @RequestBody CommunicationHistoryDto history) {
-        CommunicationHistory createdHistory = service.createByCandidateId(id, converter.convertToEntity(history));
-        return converter.convertToEntityDto(createdHistory);
+                                                       @Valid @RequestBody CreateNewCommunicationHistory history) {
+        CommunicationHistory communicationHistory = modelMapper.map(history, CommunicationHistory.class);
+        CommunicationHistory createdHistory = service.createByCandidateId(id, communicationHistory);
+        return modelMapper.map(createdHistory, CommunicationHistoryDto.class);
     }
 
     /**
@@ -70,9 +78,10 @@ public class CandidateHistoryController {
     @ApiOperation("Update history with candidate by his id")
     @PatchMapping
     public CommunicationHistoryDto updateByCandidateId(@PathVariable String id,
-                                                       @RequestBody CommunicationHistoryDto history) {
-        CommunicationHistory updatedHistory = service.updateByCandidateId(id, history);
-        return converter.convertToEntityDto(updatedHistory);
+                                                       @Valid @RequestBody UpdateExistsCommunicationHistory history) {
+        CommunicationHistory communicationHistory = modelMapper.map(history, CommunicationHistory.class);
+        CommunicationHistory updatedHistory = service.updateByCandidateId(id, communicationHistory);
+        return modelMapper.map(updatedHistory, CommunicationHistoryDto.class);
     }
 
     /**
@@ -86,6 +95,6 @@ public class CandidateHistoryController {
     public CommunicationHistoryDto archiveHistoryWithCandidate(@PathVariable String id,
                                                                @PathVariable Integer historyId) {
         CommunicationHistory archivedHistory = service.archiveByCandidateId(id, historyId);
-        return converter.convertToEntityDto(archivedHistory);
+        return modelMapper.map(archivedHistory, CommunicationHistoryDto.class);
     }
 }

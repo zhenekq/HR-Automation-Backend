@@ -1,5 +1,6 @@
-package by.mifort.automation.hr.dev.entity;
+package by.mifort.automation.hr.dev.history.data;
 
+import by.mifort.automation.hr.dev.candidate.Candidate;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -99,12 +100,12 @@ public class CommunicationHistory {
         this.candidate = candidate;
     }
 
-    public Boolean getArchived() {
+    public Boolean getIsArchived() {
         return isArchived;
     }
 
-    public void setArchived(Boolean archived) {
-        isArchived = archived;
+    public void setIsArchived(Boolean isArchived) {
+        this.isArchived = isArchived;
     }
 
     @Override
