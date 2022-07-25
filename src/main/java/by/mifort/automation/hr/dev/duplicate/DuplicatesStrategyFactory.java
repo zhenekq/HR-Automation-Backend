@@ -19,30 +19,30 @@ public class DuplicatesStrategyFactory {
 
     private final Map<DuplicatesStrategyName, DuplicatesStrategy> duplicatesStrategies = new EnumMap<>(DuplicatesStrategyName.class);
 
-    public DuplicatesStrategyFactory(Set<DuplicatesStrategy> duplicatesStrategies){
+    public DuplicatesStrategyFactory(Set<DuplicatesStrategy> duplicatesStrategies) {
         fillStrategies(duplicatesStrategies);
     }
 
-    public DuplicatesStrategy findStrategy(DuplicatesStrategyName strategyName){
+    public DuplicatesStrategy findStrategy(DuplicatesStrategyName strategyName) {
         isStrategyExists(strategyName);
         return duplicatesStrategies.get(strategyName);
     }
 
-    private void fillStrategies(Set<DuplicatesStrategy> strategies){
+    private void fillStrategies(Set<DuplicatesStrategy> strategies) {
         strategies.forEach(
                 strategy -> duplicatesStrategies.put(strategy.getStrategyName(), strategy)
         );
     }
 
-    private void isStrategyExists(DuplicatesStrategyName strategyName){
+    private void isStrategyExists(DuplicatesStrategyName strategyName) {
         boolean isExists = false;
-        for(DuplicatesStrategyName strategy: DuplicatesStrategyName.values()){
-            if(strategy.equals(strategyName)){
+        for (DuplicatesStrategyName strategy : DuplicatesStrategyName.values()) {
+            if (strategy.equals(strategyName)) {
                 isExists = true;
                 break;
             }
         }
-        if(!isExists){
+        if (!isExists) {
             throw new IllegalArgumentException("Strategy with name: " + strategyName.name() + " not exists!");
         }
     }

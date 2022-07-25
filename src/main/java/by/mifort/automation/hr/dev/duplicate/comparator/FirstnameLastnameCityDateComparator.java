@@ -38,8 +38,8 @@ public class FirstnameLastnameCityDateComparator implements Comparator<Candidate
         boolean isCityEquals = firstCandidateCity.equals(secondCandidateCity) &&
                 !firstCandidateCity.isEmpty();
 
-        if(isFirstnameEquals && isLastnameEquals &&
-                isDateEquals && isCityEquals){
+        if (isFirstnameEquals && isLastnameEquals &&
+                isDateEquals && isCityEquals) {
             return 0;
         }
         return -1;

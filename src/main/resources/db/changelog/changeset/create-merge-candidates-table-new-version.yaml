@@ -17,10 +17,10 @@ databaseChangeLog:
                   name: user1_id
                   type: varchar(200)
                   constraints:
-                      nullable: false
-                      foreignKeyName: people_merge_candidates_user1_fk
-                      referencedTableName: people
-                      referencedColumnNames: id
+                    nullable: false
+                    foreignKeyName: people_merge_candidates_user1_fk
+                    referencedTableName: people
+                    referencedColumnNames: id
               - column:
                   name: user2_id
                   type: varchar(200)

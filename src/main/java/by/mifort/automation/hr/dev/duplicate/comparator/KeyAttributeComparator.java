@@ -46,11 +46,11 @@ public class KeyAttributeComparator implements Comparator<Candidate> {
         boolean isIdenticalFacebook = firstFacebook.equals(secondFacebook) && !firstFacebook.isEmpty();
         boolean isIdenticalTelegram = firstTelegram.equals(secondTelegram) && !firstTelegram.isEmpty();
 
-        if(isIdenticalEmails || isIdenticalPhones || isIdenticalTwitters || isIdenticalLinkedIns ||
+        if (isIdenticalEmails || isIdenticalPhones || isIdenticalTwitters || isIdenticalLinkedIns ||
                 isIdenticalGithub || isIdenticalFacebook || isIdenticalTelegram
-        ){
+        ) {
             return 0;
         }
-        return  -1;
+        return -1;
     }
 }

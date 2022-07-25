@@ -35,7 +35,7 @@ public interface AssertDifferencesUpdates {
     /**
      * Get candidate with common information of 2 candidates
      *
-     * @param firstCandidate first candidate
+     * @param firstCandidate  first candidate
      * @param secondCandidate secondCandidate
      * @return Result common candidate of two candidates
      */

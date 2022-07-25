@@ -22,7 +22,7 @@ public interface AttributeTypesService {
      * Get attribute type by id
      *
      * @param id identifier of attribute type
-     * */
+     */
     AttributeTypes getById(Integer id);
 
     /**

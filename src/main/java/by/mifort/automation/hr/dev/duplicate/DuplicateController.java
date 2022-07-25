@@ -24,7 +24,7 @@ public class DuplicateController {
     }
 
     @GetMapping
-    public List<List<CandidateDto>> getByAttributes(@RequestParam String strategy){
+    public List<List<CandidateDto>> getByAttributes(@RequestParam String strategy) {
         DuplicatesStrategyName strategyName = DuplicatesStrategyName.valueOf(strategy.toUpperCase());
         DuplicatesStrategy duplicatesStrategy = factory.findStrategy(strategyName);
         List<List<Candidate>> duplicates = duplicatesStrategy.getDuplicates();

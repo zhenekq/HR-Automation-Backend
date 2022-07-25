@@ -88,7 +88,7 @@ public class CandidateController {
     @ApiOperation("Connect keywords to candidate")
     @PostMapping("/{id}")
     public List<Keyword> addKeywords(@PathVariable String id,
-                                     FilterDto filterDto){
+                                     FilterDto filterDto) {
         return keywordService.createByCandidateId(id, filterDto);
     }
 }

@@ -45,7 +45,7 @@ public class CandidateMergeController {
         return modelMapper.map(createdMerge, CandidateMergeDto.class);
     }
 
-    @PostMapping ("{id}")
+    @PostMapping("{id}")
     public CandidateMergeDto mergeById(@PathVariable Integer id) {
         CandidateMerge merge = service.mergeById(id);
         return modelMapper.map(merge, CandidateMergeDto.class);

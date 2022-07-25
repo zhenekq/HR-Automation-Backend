@@ -22,16 +22,16 @@ public interface CandidateAttributesService {
     /**
      * Create new attributes with candidate
      *
-     * @param candidateId     candidate's identifier
-     * @param attributes      body of list attributes
+     * @param candidateId candidate's identifier
+     * @param attributes  body of list attributes
      */
     List<CandidateAttributes> createByCandidateId(String candidateId, List<CandidateAttributes> attributes);
 
     /**
      * Archive attributes with candidate
      *
-     * @param candidateId     candidate's identifier
-     * @param attributesId    body of list attributes need to be archived
+     * @param candidateId  candidate's identifier
+     * @param attributesId body of list attributes need to be archived
      */
     List<CandidateAttributes> archiveByCandidateId(String candidateId, List<Integer> attributesId);
 }

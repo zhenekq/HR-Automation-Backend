@@ -37,8 +37,8 @@ public class FirstnameLastnameCityCompanyComparator implements Comparator<Candid
                 !firstCandidateCompany.isEmpty();
         boolean isCityEquals = firstCandidateCity.equals(secondCandidateCity) &&
                 !firstCandidateCity.isEmpty();
-        if(isFirstnameEquals && isLastnameEquals &&
-                isCompanyEquals && isCityEquals){
+        if (isFirstnameEquals && isLastnameEquals &&
+                isCompanyEquals && isCityEquals) {
             return 0;
         }
         return -1;

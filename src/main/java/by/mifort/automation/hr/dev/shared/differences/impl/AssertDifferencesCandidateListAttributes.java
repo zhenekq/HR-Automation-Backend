@@ -22,10 +22,10 @@ public class AssertDifferencesCandidateListAttributes {
             Integer dbDtoId = dbDto.getAttributeTypes().getId();
             CandidateAttributes dbBody = null;
             boolean isExists = false;
-            for(int j=0;j<db.size();j++){
+            for (int j = 0; j < db.size(); j++) {
                 dbBody = db.get(j);
                 Integer dbBodyId = dbBody.getAttributeTypes().getId();
-                if(dbBodyId.equals(dbDtoId)){
+                if (dbBodyId.equals(dbDtoId)) {
                     dbBody.setValueSource(dbDto.getValueSource());
                     dbBody.setValue(dbDto.getValue());
                     dbBody.setAttributeTypes(dbDto.getAttributeTypes());
@@ -34,23 +34,23 @@ public class AssertDifferencesCandidateListAttributes {
                     break;
                 }
             }
-            if(!isExists){
+            if (!isExists) {
                 resultDto.add(dbDto);
             }
         }
         return new ArrayList<>(resultDto);
     }
 
-    public static CandidateUpdate getUpdates(List<CandidateAttributes> oldAttr, List<CandidateAttributes> newAttr){
+    public static CandidateUpdate getUpdates(List<CandidateAttributes> oldAttr, List<CandidateAttributes> newAttr) {
         List<ChangeSet> changeSets = new ArrayList<>();
         CandidateUpdate update = new CandidateUpdate();
-        for(int i=0;i<oldAttr.size();i++){
+        for (int i = 0; i < oldAttr.size(); i++) {
             CandidateAttributes o = oldAttr.get(i);
-            for(int j=0;j<newAttr.size();j++){
+            for (int j = 0; j < newAttr.size(); j++) {
                 CandidateAttributes n = newAttr.get(j);
-                if(o.getAttributeTypes().getId().equals(n.getAttributeTypes().getId()) &&
-                !o.getValue().equals(n.getValue())){
-                    if(o.getValue().equals("") || o.getValue().isEmpty()){
+                if (o.getAttributeTypes().getId().equals(n.getAttributeTypes().getId()) &&
+                        !o.getValue().equals(n.getValue())) {
+                    if (o.getValue().equals("") || o.getValue().isEmpty()) {
                         continue;
                     }
                     ChangeSet changeSet = new ChangeSet();

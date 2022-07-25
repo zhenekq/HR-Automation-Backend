@@ -43,8 +43,8 @@ public class PassportFirstnameLastnameDateCityComparator implements Comparator<C
         boolean isPassportEquals = firstCandidatePassport.equals(secondCandidatePassport) &&
                 !firstCandidatePassport.isEmpty();
 
-        if(isFirstnameEquals && isLastnameEquals &&
-                isDateEquals && isCityEquals && isPassportEquals){
+        if (isFirstnameEquals && isLastnameEquals &&
+                isDateEquals && isCityEquals && isPassportEquals) {
             return 0;
         }
         return -1;

@@ -38,7 +38,7 @@ public class CommunicationHistoryController {
     /**
      * GET request to get candidate's history
      *
-     * @param id - candidate identifier
+     * @param id        - candidate identifier
      * @param filterDto pagination by history (archived, or not)
      * @return CommunicationHistory of candidate
      */
