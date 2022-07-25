@@ -55,6 +55,7 @@ public class AttributeTypesServiceImpl implements AttributeTypesService {
     }
 
     @Override
+
     public AttributeTypes archiveById(Integer id) {
         AttributeTypes attributeTypes = repository
                 .findById(id)
