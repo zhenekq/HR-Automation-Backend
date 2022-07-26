@@ -2,6 +2,7 @@ package by.mifort.automation.hr.dev.type;
 
 import by.mifort.automation.hr.dev.attribute.CandidateAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -17,6 +18,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "attributetypes")
+@AllArgsConstructor
 public class AttributeTypes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

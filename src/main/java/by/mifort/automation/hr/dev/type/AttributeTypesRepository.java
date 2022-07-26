@@ -20,4 +20,6 @@ public interface AttributeTypesRepository extends JpaRepository<AttributeTypes, 
      * @return Paginated information about attribute types
      */
     List<AttributeTypes> findByName(String name);
+
+    Boolean existsByName(String name);
 }

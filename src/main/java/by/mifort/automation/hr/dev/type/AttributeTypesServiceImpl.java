@@ -35,8 +35,8 @@ public class AttributeTypesServiceImpl implements AttributeTypesService {
 
     @Override
     public AttributeTypes create(AttributeTypes attributeTypes) {
-        List<AttributeTypes> attributes = repository.findByName(attributeTypes.getName());
-        if (attributes.size() > 1) {
+        Boolean isExistsByName = repository.existsByName(attributeTypes.getName());
+        if (isExistsByName) {
             throw new DataCreateException(AttributeTypeExceptionResponseStorage.attributeTypeExists(attributeTypes.getName()), HttpStatus.CONFLICT);
         }
         repository.save(attributeTypes);
@@ -55,7 +55,6 @@ public class AttributeTypesServiceImpl implements AttributeTypesService {
     }
 
     @Override
-
     public AttributeTypes archiveById(Integer id) {
         AttributeTypes attributeTypes = repository
                 .findById(id)
