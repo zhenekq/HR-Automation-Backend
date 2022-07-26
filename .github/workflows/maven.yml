@@ -6,14 +6,12 @@ name: Java CI with Maven
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 env:
-  AWS_REGION:  us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
+  AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: hr-automation          # set this to your Amazon ECR repository name
   ECS_SERVICE: hs-2                 # set this to your Amazon ECS service name
-  ECS_CLUSTER:  hr-automation                 # set this to your Amazon ECS cluster name
+  ECS_CLUSTER: hr-automation                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: .github/workflows/aws/task-definition.json # set this to the path to your Amazon ECS task definition
   # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: hr-automation-updated-real           # set this to the name of the container in the
@@ -28,44 +26,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-    - uses: actions/upload-artifact@v3
-      with:
-        name: target
-        path: ./target
-    - uses: actions/upload-artifact@v3
-      with:
-        name: mifort-automation-api.jar
-        path: ./target/mifort-automation-api.jar
-    - name: Run code coverage
-      run: mvn jacoco:report
-    - name: Cache SonarCloud packages
-      uses: actions/cache@v1
-      with:
-        path: ~/.sonar/cache
-        key: ${{ runner.os }}-sonar
-        restore-keys: ${{ runner.os }}-sonar
-    - name: Cache Maven packages
-      uses: actions/cache@v1
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
-    - name: Build and analyze
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=hr-automation-app      
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+      - uses: actions/upload-artifact@v3
+        with:
+          name: target
+          path: ./target
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mifort-automation-api.jar
+          path: ./target/mifort-automation-api.jar
+      - name: Run code coverage
+        run: mvn jacoco:report
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=hr-automation-app
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
   deploy:
     needs: build
     name: Deploy
