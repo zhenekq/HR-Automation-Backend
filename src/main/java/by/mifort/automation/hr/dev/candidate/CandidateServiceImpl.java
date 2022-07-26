@@ -8,6 +8,7 @@ import by.mifort.automation.hr.dev.shared.exception.varieties.DataCreateExceptio
 import by.mifort.automation.hr.dev.shared.exception.varieties.DataNotFoundException;
 import by.mifort.automation.hr.dev.type.AttributeTypes;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -38,8 +39,8 @@ public class CandidateServiceImpl implements CandidateService {
         Integer amount = filterDto.getPageSize();
         Pageable pageable = PageRequest.of(page - 1, amount);
         if (filterDto.getKeyword() == null) {
-            candidateList = candidateRepository.findAll(pageable).toList();
-            return candidateList;
+            Page<Candidate> candidates = candidateRepository.findAll(pageable);
+            return candidates.getContent();
         }
         candidateList = candidateRepository.findCandidatesByKeywordsContaining(filterDto.getKeyword().get(0), pageable);
         return candidateList;
@@ -47,19 +48,16 @@ public class CandidateServiceImpl implements CandidateService {
 
     @Override
     public Candidate getById(String id) {
-        return candidateRepository.findById(id)
-                .orElseThrow(
-                        () -> new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(id), HttpStatus.NOT_FOUND)
-                );
+        return candidateRepository
+                .findById(id)
+                .orElseThrow(() -> new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(id), HttpStatus.NOT_FOUND));
     }
 
     @Override
     @Transactional
     public Candidate create(Candidate candidate) {
         String candidateId = candidate.getId();
-        boolean isCandidateExists = candidateRepository
-                .findById(candidate.getId())
-                .isPresent();
+        boolean isCandidateExists = candidateRepository.existsCandidateById(candidateId);
         if (!isCandidateExists) {
             candidate.setLastContact(new Timestamp(new Date().getTime()));
             candidate.setStatus(CandidateStatus.CREATED.toString());
