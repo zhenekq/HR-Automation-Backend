@@ -33,18 +33,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
-      - uses: actions/upload-artifact@v3
-        with:
-          name: target
-          path: ./target
-      - uses: actions/upload-artifact@v3
-        with:
-          name: mifort-automation-api.jar
-          path: ./target/mifort-automation-api.jar
-      - name: Run code coverage
-        run: mvn jacoco:report
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
@@ -61,7 +49,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=hr-automation-app
+        run: mvn -B verify jacoco:report org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=hr-automation-app
+      - uses: actions/upload-artifact@v3
+        with:
+          name: target
+          path: ./target
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mifort-automation-api.jar
+          path: ./target/mifort-automation-api.jar
   deploy:
     needs: build
     name: Deploy
@@ -86,7 +82,10 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
       - run: echo $(pwd)
-      - uses: actions/download-artifact@master
+      - uses: actions/download-artifact@v3
+      - name: Display structure of downloaded files
+        run: ls -la
+      - uses: actions/download-artifact@v3
         with:
           name: mifort-automation-api.jar
           path: target/mifort-automation-api.jar
