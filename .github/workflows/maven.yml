@@ -87,6 +87,7 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
+      - run: echo $(pwd)
       - uses: actions/download-artifact@master
         with:
           name: mifort-automation-api.jar
