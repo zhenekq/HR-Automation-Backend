@@ -85,10 +85,7 @@ jobs:
       - uses: actions/download-artifact@v3
       - name: Display structure of downloaded files
         run: ls -la
-      - uses: actions/download-artifact@v3
-        with:
-          name: mifort-automation-api.jar
-          path: target/mifort-automation-api.jar
+      - run: ls ./target -la
       - run: stat target/mifort-automation-api.jar
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
