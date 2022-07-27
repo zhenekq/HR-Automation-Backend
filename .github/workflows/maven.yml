@@ -62,8 +62,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=hr-automation-app
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
   deploy:
     needs: build
     name: Deploy
@@ -92,6 +90,7 @@ jobs:
         with:
           name: mifort-automation-api.jar
           path: target/mifort-automation-api.jar
+      - run: stat target/mifort-automation-api.jar
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
