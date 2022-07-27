@@ -2,7 +2,7 @@ package by.mifort.automation.hr.dev.candidate;
 
 import by.mifort.automation.hr.dev.attribute.CandidateAttributesDto;
 import by.mifort.automation.hr.dev.history.data.CommunicationHistoryDto;
-import by.mifort.automation.hr.dev.keyword.Keyword;
+import by.mifort.automation.hr.dev.keyword.KeywordDto;
 import by.mifort.automation.hr.dev.merge.CandidateMergeDto;
 import by.mifort.automation.hr.dev.update.data.CandidateUpdateDto;
 import lombok.*;
@@ -30,7 +30,7 @@ public class CandidateDto {
     private Timestamp lastContact;
     private String status;
     private List<CandidateUpdateDto> candidateUpdates = new ArrayList<>();
-    private List<Keyword> keywords = new ArrayList<>();
+    private List<KeywordDto> keywords = new ArrayList<>();
     private List<CommunicationHistoryDto> communicationHistory = new ArrayList<>();
     private List<CandidateAttributesDto> candidateAttributes = new ArrayList<>();
     private List<CandidateMergeDto> mergeCandidates = new ArrayList<>();
