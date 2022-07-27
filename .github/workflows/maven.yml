@@ -90,7 +90,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: mifort-automation-api.jar
-          path: ./target/mifort-automation-api.jar
+          path: target/mifort-automation-api.jar
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
