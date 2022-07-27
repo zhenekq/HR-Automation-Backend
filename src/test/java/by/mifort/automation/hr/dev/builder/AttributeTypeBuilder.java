@@ -5,6 +5,7 @@ import by.mifort.automation.hr.dev.type.AttributeTypes;
 import net.bytebuddy.utility.RandomString;
 import org.apache.commons.lang3.RandomUtils;
 
+import java.util.Collections;
 import java.util.List;
 
 public class AttributeTypeBuilder {
@@ -67,9 +68,11 @@ public class AttributeTypeBuilder {
     public AttributeTypeBuilder plain() {
         this.id = RandomUtils.nextInt();
         this.basicType = RandomString.make();
+        this.name = RandomString.make();
         this.validation = RandomString.make();
         this.isIdentifier = RandomUtils.nextBoolean();
         this.isMultivalued = RandomUtils.nextBoolean();
+        this.candidateAttributes = Collections.emptyList();
 
         return this;
     }
