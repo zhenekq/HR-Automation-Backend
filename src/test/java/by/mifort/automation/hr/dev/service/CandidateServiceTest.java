@@ -43,7 +43,6 @@ class CandidateServiceTest {
         candidateService = new CandidateServiceImpl(candidateRepository, candidateAttributesRepository);
     }
 
-
     @Test
     @DisplayName("Does save without attributes works")
     void checkIsCreateWithoutAttributesWorks() {

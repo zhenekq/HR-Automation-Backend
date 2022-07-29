@@ -67,6 +67,9 @@ public class CommunicationHistoryServiceImpl implements CommunicationHistoryServ
     @Override
     @Transactional
     public CommunicationHistory updateByCandidateId(String candidateId, CommunicationHistory history) {
+        candidateRepository
+                .findById(candidateId)
+                .orElseThrow(() -> new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(candidateId), HttpStatus.NOT_FOUND));
         CommunicationHistory communicationHistory = repository
                 .findCommunicationHistoryByCandidateIdAndId(candidateId, history.getId())
                 .orElseThrow(() -> new DataNotFoundException(HistoryExceptionResponseStorage.historyNotFound(history.getId()), HttpStatus.NOT_FOUND));
