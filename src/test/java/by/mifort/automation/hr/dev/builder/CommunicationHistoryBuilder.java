@@ -1,8 +1,12 @@
-package by.mifort.automation.hr.dev.history.data;
+package by.mifort.automation.hr.dev.builder;
 
 import by.mifort.automation.hr.dev.candidate.Candidate;
+import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
+import net.bytebuddy.utility.RandomString;
+import org.apache.commons.lang3.RandomUtils;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class CommunicationHistoryBuilder {
     private Integer id;
@@ -39,6 +43,17 @@ public class CommunicationHistoryBuilder {
 
     public CommunicationHistoryBuilder setCandidate(Candidate candidate) {
         this.candidate = candidate;
+        return this;
+    }
+
+    public CommunicationHistoryBuilder plain() {
+        this.candidate = new Candidate();
+        this.comment = RandomString.make();
+        this.id = RandomUtils.nextInt();
+        this.createDate = new Timestamp(new Date().getTime());
+        this.updateDate = new Timestamp(new Date().getTime());
+        this.isArchived = RandomUtils.nextBoolean();
+
         return this;
     }
 

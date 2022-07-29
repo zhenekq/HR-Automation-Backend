@@ -3,7 +3,6 @@ package by.mifort.automation.hr.dev.history;
 import by.mifort.automation.hr.dev.candidate.Candidate;
 import by.mifort.automation.hr.dev.candidate.CandidateRepository;
 import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
-import by.mifort.automation.hr.dev.history.data.CommunicationHistoryBuilder;
 import by.mifort.automation.hr.dev.shared.data.FilterDto;
 import by.mifort.automation.hr.dev.shared.differences.AssertDifferencesUpdates;
 import by.mifort.automation.hr.dev.shared.exception.storage.CandidateExceptionResponseStorage;
@@ -17,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CommunicationHistoryServiceImpl implements CommunicationHistoryService {
@@ -35,7 +33,7 @@ public class CommunicationHistoryServiceImpl implements CommunicationHistoryServ
 
     @Override
     public List<CommunicationHistory> getByCandidateId(String candidateId, FilterDto filterDto) {
-        if (candidateRepository.findById(candidateId).isEmpty()) {
+        if (!candidateRepository.existsCandidateById(candidateId)) {
             throw new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(candidateId), HttpStatus.NOT_FOUND);
         }
         List<CommunicationHistory> communicationHistory;
@@ -52,19 +50,16 @@ public class CommunicationHistoryServiceImpl implements CommunicationHistoryServ
     @Override
     @Transactional
     public CommunicationHistory createByCandidateId(String candidateId, CommunicationHistory history) {
-        Optional<Candidate> optionalCandidate = candidateRepository.findById(candidateId);
-        if (optionalCandidate.isEmpty()) {
-            throw new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(candidateId), HttpStatus.NOT_FOUND);
-        }
-        Candidate candidate = optionalCandidate.get();
+        Candidate candidate = candidateRepository
+                .findById(candidateId)
+                .orElseThrow(() -> new DataNotFoundException(CandidateExceptionResponseStorage.candidateNotExists(candidateId), HttpStatus.NOT_FOUND));
         String comment = history.getComment();
-        history = new CommunicationHistoryBuilder()
-                .setComment(comment)
-                .setCandidate(candidate)
-                .setIsArchived(Boolean.FALSE)
-                .setCreateDate(new Timestamp(new Date().getTime()))
-                .setUpdateDate(new Timestamp(new Date().getTime()))
-                .createCommunicationHistory();
+        history = new CommunicationHistory();
+        history.setComment(comment);
+        history.setCandidate(candidate);
+        history.setIsArchived(Boolean.FALSE);
+        history.setCreateDate(new Timestamp(new Date().getTime()));
+        history.setUpdateDate(new Timestamp(new Date().getTime()));
         repository.save(history);
         return history;
     }

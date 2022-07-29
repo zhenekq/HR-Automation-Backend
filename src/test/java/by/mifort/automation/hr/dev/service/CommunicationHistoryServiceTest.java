@@ -6,14 +6,22 @@ import by.mifort.automation.hr.dev.history.CommunicationHistoryRepository;
 import by.mifort.automation.hr.dev.history.CommunicationHistoryService;
 import by.mifort.automation.hr.dev.history.CommunicationHistoryServiceImpl;
 import by.mifort.automation.hr.dev.history.data.CommunicationHistory;
+import by.mifort.automation.hr.dev.shared.data.FilterDto;
 import by.mifort.automation.hr.dev.shared.differences.AssertDifferencesUpdates;
 import by.mifort.automation.hr.dev.shared.differences.impl.AssertDifferencesUpdatesImpl;
+import by.mifort.automation.hr.dev.shared.exception.varieties.DataNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class CommunicationHistoryServiceTest {
@@ -33,20 +41,63 @@ public class CommunicationHistoryServiceTest {
     }
 
     @Test
-    @DisplayName("Check EXISTS communication history by EXISTS candidate id")
-    void checkExistsCommunicationHistoryByExistsCandidateId() {
-        CommunicationHistory history = new CommunicationHistoryBuilder().plain().createCommunicationHistory();
+    @DisplayName("Check communication history by not exists candidate id")
+    void checkCommunicationHistoryByNotExistsCandidateId() {
+        String candidateId = anyString();
+        assertThatThrownBy(() -> service.getByCandidateId(candidateId, new FilterDto()))
+                .isInstanceOf(DataNotFoundException.class);
     }
 
     @Test
-    void createByCandidateId() {
+    @DisplayName("Check archived communication history by exists candidate id")
+    void checkArchivedCommunicationHistoryByExistsCandidateId() {
+        boolean isArchived = true;
+        String candidateId = anyString();
+        FilterDto filterDto = new FilterDto();
+        filterDto.setIsArchived(isArchived);
+        given(candidateRepository.existsCandidateById(candidateId))
+                .willReturn(isArchived);
+
+        service.getByCandidateId(candidateId, filterDto);
+
+        verify(repository).findCommunicationHistoriesByCandidateIdAndIsArchivedEquals(candidateId, isArchived);
+
     }
 
     @Test
+    @DisplayName("Check not archived communication history by exists candidate id")
+    void checkNotArchivedCommunicationHistoryByExistsCandidateId() {
+        boolean isArchived = false;
+        String candidateId = anyString();
+        FilterDto filterDto = new FilterDto();
+        filterDto.setIsArchived(isArchived);
+        given(candidateRepository.existsCandidateById(candidateId))
+                .willReturn(true);
+
+        service.getByCandidateId(candidateId, filterDto);
+
+        verify(repository).findCommunicationHistoriesByCandidateIdAndIsArchivedEquals(candidateId, isArchived);
+
+    }
+
+    @Test
+    @DisplayName("Create communication history by not exists candidate id")
+    void createCommunicationHistoryByNotExistsCandidateId() {
+        CommunicationHistory communicationHistory = new CommunicationHistoryBuilder()
+                .plain()
+                .createCommunicationHistory();
+        String candidateId = anyString();
+        assertThatThrownBy(() -> service.createByCandidateId(candidateId, communicationHistory))
+                .isInstanceOf(DataNotFoundException.class);
+    }
+
+    @Test
+    @Disabled
     void updateByCandidateId() {
     }
 
     @Test
+    @Disabled
     void archiveByCandidateId() {
     }
 }

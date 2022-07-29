@@ -2,14 +2,17 @@ package by.mifort.automation.hr.dev.service;
 
 import by.mifort.automation.hr.dev.builder.AttributeTypeBuilder;
 import by.mifort.automation.hr.dev.shared.differences.AssertDifferencesUpdates;
+import by.mifort.automation.hr.dev.shared.differences.impl.AssertDifferencesUpdatesImpl;
 import by.mifort.automation.hr.dev.shared.exception.varieties.DataCreateException;
 import by.mifort.automation.hr.dev.shared.exception.varieties.DataNotFoundException;
 import by.mifort.automation.hr.dev.type.AttributeTypes;
 import by.mifort.automation.hr.dev.type.AttributeTypesRepository;
 import by.mifort.automation.hr.dev.type.AttributeTypesService;
 import by.mifort.automation.hr.dev.type.AttributeTypesServiceImpl;
+import net.bytebuddy.utility.RandomString;
+import org.apache.commons.lang3.RandomUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,7 +37,13 @@ public class AttributeTypeServiceTest {
 
     @BeforeEach
     void setup() {
+        updates = new AssertDifferencesUpdatesImpl();
         attributeTypesService = new AttributeTypesServiceImpl(attributeTypesRepository, updates);
+    }
+
+    @AfterEach
+    void clean() {
+        attributeTypesRepository.deleteAll();
     }
 
     @Test
@@ -85,18 +94,50 @@ public class AttributeTypeServiceTest {
                 .willReturn(true);
         assertThatThrownBy(() -> attributeTypesService.create(attributeTypes))
                 .isInstanceOf(DataCreateException.class);
-
-
     }
 
     @Test
-    @Disabled
-    void updateById() {
+    @DisplayName("Update exists attribute type by id")
+    void updateExistsAttributeTypeById() {
+        AttributeTypes attributeTypes = new AttributeTypeBuilder().plain().build();
+        Integer attributeTypeId = attributeTypes.getId();
+
+        given(attributeTypesRepository.findById(attributeTypeId))
+                .willReturn(Optional.of(attributeTypes));
+
+        attributeTypes.setName(RandomString.make());
+        attributeTypesService.updateById(attributeTypeId, attributeTypes);
+        verify(attributeTypesRepository).save(attributeTypes);
     }
 
     @Test
-    @Disabled
-    void archiveById() {
+    @DisplayName("Update NOT exists attribute type by id")
+    void updateNotExistsAttributeTypeById() {
+        Integer attributeTypeId = RandomUtils.nextInt();
+        AttributeTypes attributeType = new AttributeTypeBuilder().plain().build();
+        assertThatThrownBy(() -> attributeTypesService.updateById(attributeTypeId, attributeType))
+                .isInstanceOf(DataNotFoundException.class);
+    }
+
+    @Test
+    @DisplayName("Archive exists attribute type by id ")
+    void archiveExistsAttributeTypeById() {
+        AttributeTypes attributeTypes = new AttributeTypeBuilder().plain().build();
+        Integer attributeTypeId = attributeTypes.getId();
+
+        given(attributeTypesRepository.findById(attributeTypeId))
+                .willReturn(Optional.of(attributeTypes));
+
+        attributeTypesService.archiveById(attributeTypeId);
+        verify(attributeTypesRepository).save(attributeTypes);
+    }
+
+    @Test
+    @DisplayName("Archive NOT exists attribute type by id ")
+    void archiveNotExistsAttributeTypeById() {
+        Integer attributeTypeId = RandomUtils.nextInt();
+        assertThatThrownBy(() -> attributeTypesService.archiveById(attributeTypeId))
+                .isInstanceOf(DataNotFoundException.class);
     }
 
 }
